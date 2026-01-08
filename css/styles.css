@@ -203,4 +203,21 @@ section {
     justify-content: center;
   }
 }
+/* ===== DARK MODE ===== */
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .navbar,
+body.dark .skill-card,
+body.dark .project-card,
+body.dark .footer {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark a {
+  color: #93c5fd;
+}
 

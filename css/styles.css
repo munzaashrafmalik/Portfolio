@@ -220,4 +220,34 @@ body.dark .footer {
 body.dark a {
   color: #93c5fd;
 }
+/* ===== MOBILE MENU ===== */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  width: 25px;
+  height: 3px;
+  background: #111;
+  margin: 5px;
+}
+
+@media (max-width: 768px) {
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    background: white;
+    width: 100%;
+    padding: 10px;
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+}
 

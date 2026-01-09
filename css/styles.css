@@ -516,4 +516,61 @@ section {
   border-color: #6366f1;
   box-shadow: 0 0 12px rgba(99,102,241,0.5);
 }
+/* ===== FORCE CENTER ALIGN FOR ALL SECTIONS ===== */
+
+section {
+  text-align: center;
+}
+
+/* Headings center */
+.section-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* About text center */
+.about-content,
+.about-content p {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Skills center */
+.skills-container {
+  justify-items: center;
+}
+
+/* Projects center */
+.projects-grid {
+  justify-items: center;
+}
+
+.project-card {
+  max-width: 420px;
+  margin: auto;
+}
+
+/* Contact center */
+.contact-container,
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  text-align: center;
+}
+
+/* Contact inputs center look */
+.contact-form input,
+.contact-form textarea {
+  text-align: left; /* input typing natural rahe */
+}
+
+/* Footer center */
+.footer,
+.footer-content,
+.social-links {
+  text-align: center;
+  justify-content: center;
+}
 

@@ -282,4 +282,116 @@ body.dark .contact-form textarea {
   color: #f472b6;
   margin: 0 12px;
 }
+/* ================= PREMIUM ANIMATIONS ================= */
+
+/* Floating gradient blobs */
+.hero::before,
+.hero::after {
+  content: "";
+  position: absolute;
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, rgba(244,114,182,0.4), transparent 70%);
+  border-radius: 50%;
+  animation: float 8s ease-in-out infinite;
+  z-index: 0;
+}
+
+.hero::before {
+  top: -80px;
+  left: -80px;
+}
+
+.hero::after {
+  bottom: -80px;
+  right: -80px;
+  animation-delay: 4s;
+}
+
+.hero-container {
+  position: relative;
+  z-index: 2;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-30px); }
+  100% { transform: translateY(0); }
+}
+
+/* ================= SECTION FADE IN ================= */
+section {
+  animation: fadeUp 0.8s ease both;
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ================= SKILL CLICK EFFECT ================= */
+.skill-card:active {
+  transform: scale(0.97);
+}
+
+/* ================= GLOW ON HOVER ================= */
+.skill-card:hover h3 {
+  color: #f472b6;
+}
+
+/* ================= SOCIAL ICONS ================= */
+.social-links a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 45px;
+  height: 45px;
+  margin: 0 8px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4f46e5, #f472b6);
+  color: white;
+  font-size: 20px;
+  transition: all 0.35s ease;
+}
+
+.social-links a:hover {
+  transform: translateY(-6px) scale(1.1);
+  box-shadow:
+    0 0 15px rgba(244,114,182,0.8),
+    0 0 30px rgba(79,70,229,0.6);
+}
+
+/* ================= CONTACT BUTTON GLOW ================= */
+.contact-form button {
+  border-radius: 30px;
+  background: linear-gradient(135deg, #4f46e5, #f472b6);
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.contact-form button:hover {
+  box-shadow:
+    0 0 15px rgba(244,114,182,0.7),
+    0 0 30px rgba(99,102,241,0.6);
+}
+
+/* ================= NAVBAR ICON BUTTON ================= */
+#theme-toggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+#theme-toggle:hover {
+  transform: rotate(20deg) scale(1.1);
+}
 

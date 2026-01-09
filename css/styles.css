@@ -573,4 +573,71 @@ section {
   text-align: center;
   justify-content: center;
 }
+/* ===== ABOUT SECTION BIGGER ===== */
+#about {
+  padding: 100px 20px;
+}
 
+.about-content {
+  max-width: 900px;
+  margin: auto;
+}
+
+.about-content p {
+  font-size: 18px;
+  line-height: 1.9;
+  margin-bottom: 20px;
+}
+/* ===== BIG SKILLS SECTION ===== */
+#skills {
+  padding: 100px 20px;
+}
+
+.skill-card h3 {
+  font-size: 22px;
+  margin-bottom: 10px;
+}
+
+/* Bigger skill bar */
+.level-bar {
+  height: 20px;
+  border-radius: 20px;
+}
+
+.level-progress {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: bold;
+}
+/* ===== PROJECTS FULL WIDTH FEEL ===== */
+#projects {
+  padding: 100px 20px;
+}
+
+.projects-grid {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 30px;
+}
+
+.project-card {
+  padding: 30px;
+}
+
+.project-card h3 {
+  font-size: 22px;
+}
+
+.project-card p {
+  font-size: 16px;
+  line-height: 1.7;
+}
+/* ===== CONTACT INFO VISIBLE ===== */
+.contact-info p {
+  font-size: 17px;
+  margin-bottom: 10px;
+}
+
+.contact-info a {
+  color: #2563eb;
+  font-weight: 500;
+}

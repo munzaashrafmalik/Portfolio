@@ -1,99 +1,203 @@
+/* ===============================
+   RESET & VARIABLES
+================================ */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: "Segoe UI", Arial, sans-serif;
 }
 
 :root {
   --primary: #2563eb;
-  --dark: #0f172a;
-  --light: #f8fafc;
+  --bg-light: #f8fafc;
+  --bg-dark: #020617;
+  --card-light: #ffffff;
+  --card-dark: #020617;
+  --text-light: #0f172a;
+  --text-dark: #e5e7eb;
+  --border: #1e293b;
 }
 
+/* ===============================
+   BODY
+================================ */
 body {
-  background: var(--light);
-  color: #111;
+  background: var(--bg-light);
+  color: var(--text-light);
   line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
 }
 
-/* ===== NAVBAR ===== */
+body.dark {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+}
+
+/* ===============================
+   NAVBAR
+================================ */
 .navbar {
-  background: white;
-  border-bottom: 1px solid #ddd;
   position: sticky;
   top: 0;
+  background: var(--card-light);
+  border-bottom: 1px solid #e5e7eb;
+  z-index: 100;
+}
+
+body.dark .navbar {
+  background: var(--bg-dark);
+  border-color: var(--border);
 }
 
 .nav-container {
   max-width: 1100px;
   margin: auto;
-  padding: 15px;
+  padding: 14px 20px;
   display: flex;
-  justify-content: space-between;
   align-items: center;
+  justify-content: space-between;
+}
+
+.nav-logo a {
+  text-decoration: none;
+  font-weight: 700;
+  color: var(--primary);
 }
 
 .nav-menu {
   display: flex;
-  gap: 15px;
+  align-items: center;
+  gap: 16px;
 }
 
 .nav-link {
   text-decoration: none;
-  color: #111;
+  color: inherit;
+  font-weight: 500;
 }
 
-.nav-toggle {
-  display: none;
+.nav-link:hover {
+  color: var(--primary);
 }
 
 .theme-toggle {
   background: none;
   border: none;
-  cursor: pointer;
   font-size: 18px;
+  cursor: pointer;
 }
 
-/* ===== HERO ===== */
+/* ===============================
+   MOBILE NAV
+================================ */
+.nav-toggle {
+  display: none;
+  cursor: pointer;
+}
+
+.nav-toggle .bar {
+  width: 24px;
+  height: 3px;
+  background: currentColor;
+  margin: 4px;
+}
+
+@media (max-width: 768px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .nav-menu {
+    display: none;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background: var(--card-light);
+    flex-direction: column;
+    padding: 15px;
+  }
+
+  body.dark .nav-menu {
+    background: var(--bg-dark);
+  }
+
+  .nav-menu.show {
+    display: flex;
+  }
+}
+
+/* ===============================
+   HERO
+================================ */
 .hero {
-  background: linear-gradient(120deg, var(--primary), #1e40af);
-  color: white;
-  padding: 80px 20px;
-}
-
-.hero-container {
-  max-width: 1100px;
-  margin: auto;
+  min-height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  padding: 40px 20px;
 }
 
-.highlight {
-  color: #dbeafe;
+.hero h1 {
+  font-size: 3rem;
 }
 
-/* ===== BUTTONS ===== */
-.btn {
-  padding: 10px 20px;
-  border-radius: 6px;
-  text-decoration: none;
-  display: inline-block;
-  margin: 10px;
-}
-
-.btn-primary {
-  background: white;
+.hero h2 {
+  margin: 10px 0;
   color: var(--primary);
 }
 
-.btn-secondary {
-  border: 2px solid white;
-  color: white;
+.hero p {
+  max-width: 600px;
+  margin: 20px auto;
+  color: #64748b;
 }
 
-/* ===== SECTIONS ===== */
+body.dark .hero p {
+  color: #94a3b8;
+}
+
+.highlight {
+  color: var(--primary);
+}
+
+/* ===============================
+   BUTTONS
+================================ */
+.btn {
+  padding: 12px 26px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: 0.3s;
+}
+
+.btn-primary {
+  background: var(--primary);
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #1d4ed8;
+}
+
+.btn-secondary {
+  border: 2px solid var(--primary);
+  color: var(--primary);
+}
+
+.btn-secondary:hover {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* ===============================
+   SECTIONS
+================================ */
 section {
-  padding: 60px 20px;
+  padding: 70px 20px;
 }
 
 .container {
@@ -103,134 +207,125 @@ section {
 
 .section-title {
   text-align: center;
-  margin-bottom: 30px;
+  font-size: 28px;
+  margin-bottom: 40px;
 }
 
-/* ===== SKILLS ===== */
+/* ===============================
+   SKILLS
+================================ */
 .skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
-}
-
-.skill-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
-}
-
-.level-bar {
-  background: #e5e7eb;
-  height: 14px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
-.level-progress {
-  height: 100%;
-  background: var(--primary);
-  color: white;
-  font-size: 12px;
-  text-align: right;
-  padding-right: 6px;
-  transition: width 1s ease;
-}
-
-/* ===== PROJECTS ===== */
-.projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
   gap: 20px;
 }
 
-.project-card {
-  background: white;
+.skill-card {
+  background: var(--card-light);
   padding: 20px;
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s;
+}
+
+body.dark .skill-card {
+  background: var(--card-dark);
+  border-color: var(--border);
+}
+
+.skill-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+.level-bar {
+  background: #e5e7eb;
   border-radius: 8px;
+  overflow: hidden;
+  margin-top: 10px;
 }
 
-.project-links a {
-  margin-right: 10px;
-  text-decoration: none;
-  color: var(--primary);
-}
-
-/* ===== FOOTER ===== */
-.footer {
-  background: var(--dark);
-  color: white;
-  text-align: center;
-  padding: 30px;
-}
-
-.social-links a {
-  color: #c7d2fe;
-  margin: 0 10px;
-  text-decoration: none;
-}
-
-body.dark {
-  background: #020617;
-  color: #e5e7eb;
-}
-
-body.dark .navbar,
-body.dark .skill-card,
-body.dark .project-card {
-  background: #020617;
-}
-/* ===== DARK MODE ===== */
-body.dark {
-  background-color: #020617;
-  color: #e5e7eb;
-}
-
-/* Navbar */
-body.dark .navbar {
-  background-color: #020617;
-  border-bottom: 1px solid #1e293b;
-}
-
-body.dark .nav-link,
-body.dark .nav-logo a {
-  color: #e5e7eb;
-}
-
-/* Cards */
-body.dark .skill-card,
-body.dark .project-card,
-body.dark .contact-form,
-body.dark .footer {
-  background-color: #020617;
-  border: 1px solid #1e293b;
-}
-
-/* Buttons */
-body.dark .btn-primary {
-  background-color: #2563eb;
-  color: #ffffff;
-}
-
-body.dark .btn-secondary {
-  background-color: transparent;
-  border: 1px solid #2563eb;
-  color: #2563eb;
-}
-
-/* Progress Bar */
 body.dark .level-bar {
-  background-color: #1e293b;
+  background: #1e293b;
 }
 
-body.dark .level-progress {
-  background-color: #2563eb;
+.level-progress {
+  background: linear-gradient(90deg, #2563eb, #60a5fa);
+  color: #fff;
+  font-size: 12px;
+  padding-right: 6px;
+  text-align: right;
 }
 
-/* Links */
-body.dark a {
+/* ===============================
+   PROJECTS
+================================ */
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 20px;
+}
+
+.project-card {
+  background: var(--card-light);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid #e5e7eb;
+  transition: 0.3s;
+}
+
+body.dark .project-card {
+  background: var(--card-dark);
+  border-color: var(--border);
+}
+
+.project-card:hover {
+  transform: translateY(-6px);
+  border-color: var(--primary);
+}
+
+/* ===============================
+   CONTACT
+================================ */
+.contact-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+}
+
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background: #020617;
+  border-color: var(--border);
+  color: var(--text-dark);
+}
+
+@media (max-width: 768px) {
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* ===============================
+   FOOTER
+================================ */
+.footer {
+  background: var(--bg-dark);
+  color: var(--text-dark);
+  padding: 40px 20px;
+  text-align: center;
+}
+
+.footer a {
   color: #93c5fd;
+  text-decoration: none;
 }
 
-body.dark a:hover {
-  color: #bfdbfe;
-}

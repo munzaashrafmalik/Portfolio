@@ -1,6 +1,6 @@
 console.log("JS connected");
 
-// Dark Mode
+// Dark Mode Toggle
 const themeBtn = document.getElementById("theme-toggle");
 const body = document.body;
 

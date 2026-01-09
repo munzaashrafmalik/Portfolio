@@ -1,73 +1,119 @@
+/* ================= RESET ================= */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: Arial, sans-serif;
+  font-family: "Poppins", Arial, sans-serif;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
+/* ================= COLORS ================= */
+:root {
+  --primary: #1e3a8a;       /* dark blue */
+  --secondary: #4f46e5;     /* soft indigo */
+  --accent: #f472b6;        /* feminine pink */
+  --bg-light: #f8fafc;
+  --bg-dark: #020617;
+  --card-light: #ffffff;
+  --card-dark: #020617;
+  --text-light: #111827;
+  --text-dark: #e5e7eb;
+}
+
+/* ================= BODY ================= */
 body {
-  background: #f8fafc;
-  color: #111;
-  line-height: 1.6;
+  background: var(--bg-light);
+  color: var(--text-light);
+  line-height: 1.7;
+  transition: background 0.4s ease, color 0.4s ease;
 }
 
 body.dark {
-  background: #020617;
-  color: #e5e7eb;
+  background: var(--bg-dark);
+  color: var(--text-dark);
 }
 
-/* NAVBAR */
+/* ================= NAVBAR ================= */
 .navbar {
-  background: white;
-  padding: 15px;
   position: sticky;
   top: 0;
+  z-index: 1000;
+  background: var(--card-light);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.05);
 }
 
 body.dark .navbar {
-  background: #020617;
+  background: var(--card-dark);
 }
 
 .nav-container {
   max-width: 1100px;
   margin: auto;
+  padding: 15px 20px;
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
 .nav-menu a {
-  margin: 0 10px;
+  margin: 0 12px;
   text-decoration: none;
+  font-weight: 500;
   color: inherit;
+  position: relative;
 }
 
-.theme-btn {
-  margin-left: 10px;
+.nav-menu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -5px;
+  width: 0%;
+  height: 2px;
+  background: var(--accent);
+  transition: 0.3s;
 }
 
-/* HERO */
+.nav-menu a:hover::after {
+  width: 100%;
+}
+
+/* ================= HERO ================= */
 .hero {
-  background: linear-gradient(120deg, #2563eb, #1e40af);
+  background: linear-gradient(135deg, #1e3a8a, #312e81);
   color: white;
-  padding: 80px 20px;
+  padding: 100px 20px;
   text-align: center;
 }
 
 .hero span {
-  color: #fde047;
+  color: var(--accent);
+}
+
+.hero-subtitle {
+  opacity: 0.9;
+  margin-bottom: 25px;
 }
 
 .btn {
-  padding: 10px 20px;
-  margin: 5px;
+  padding: 12px 26px;
+  border-radius: 30px;
   text-decoration: none;
-  display: inline-block;
+  font-weight: 500;
+  transition: all 0.3s ease;
 }
 
 .btn-primary {
   background: white;
-  color: #2563eb;
+  color: var(--primary);
+}
+
+.btn-primary:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(255,255,255,0.3);
 }
 
 .btn-secondary {
@@ -75,9 +121,14 @@ body.dark .navbar {
   color: white;
 }
 
-/* SECTIONS */
+.btn-secondary:hover {
+  background: white;
+  color: var(--primary);
+}
+
+/* ================= SECTIONS ================= */
 section {
-  padding: 60px 20px;
+  padding: 80px 20px;
 }
 
 .container {
@@ -87,134 +138,148 @@ section {
 
 .section-title {
   text-align: center;
-  margin-bottom: 30px;
+  font-size: 2rem;
+  margin-bottom: 40px;
+  color: var(--primary);
 }
 
-/* SKILLS */
+body.dark .section-title {
+  color: #93c5fd;
+}
+
+/* ================= ABOUT ================= */
+.about-content p {
+  max-width: 800px;
+  margin: 15px auto;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* ================= SKILLS ================= */
 .skills-container {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 25px;
 }
 
 .skill-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
+  background: var(--card-light);
+  padding: 25px;
+  border-radius: 16px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  cursor: pointer;
 }
 
 body.dark .skill-card {
-  background: #020617;
+  background: var(--card-dark);
+}
+
+.skill-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 50px rgba(79,70,229,0.25);
 }
 
 .level-bar {
   background: #e5e7eb;
   height: 14px;
   border-radius: 10px;
+  overflow: hidden;
+  margin-top: 10px;
 }
 
+body.dark .level-bar {
+  background: #1e293b;
+}
+
+/* ===== RAINBOW GLOW BAR ===== */
 .level-progress {
-  background: #2563eb;
   height: 100%;
-  color: white;
   font-size: 12px;
   text-align: right;
-  padding-right: 5px;
+  padding-right: 6px;
+  color: #020617;
+  border-radius: 10px;
+  background: linear-gradient(
+    90deg,
+    #ff0080,
+    #ff8c00,
+    #ffe600,
+    #00ff9c,
+    #00c8ff,
+    #8b5cf6
+  );
+  background-size: 300% 100%;
+  animation: rainbowMove 5s linear infinite;
+  transition: box-shadow 0.4s ease;
 }
 
-/* PROJECTS */
+.skill-card:hover .level-progress {
+  box-shadow:
+    0 0 10px rgba(255,105,180,0.8),
+    0 0 20px rgba(99,102,241,0.6),
+    0 0 35px rgba(14,165,233,0.5);
+}
+
+@keyframes rainbowMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+/* ================= PROJECTS ================= */
 .project-card {
-  background: white;
-  padding: 20px;
-  border-radius: 8px;
+  background: var(--card-light);
+  padding: 25px;
+  border-radius: 18px;
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
 }
 
 body.dark .project-card {
-  background: #020617;
+  background: var(--card-dark);
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px rgba(30,58,138,0.25);
 }
 
 .project-links a {
-  margin-right: 10px;
+  margin-right: 15px;
+  color: var(--secondary);
+  font-weight: 500;
 }
 
-/* CONTACT */
+/* ================= CONTACT ================= */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+}
+
 .contact-form input,
 .contact-form textarea {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 10px;
+  padding: 12px;
+  border-radius: 10px;
+  border: 1px solid #c7d2fe;
+  margin-bottom: 15px;
 }
 
-/* FOOTER */
-.footer {
-  background: #0f172a;
+body.dark .contact-form input,
+body.dark .contact-form textarea {
+  background: #020617;
   color: white;
-  padding: 20px;
+  border: 1px solid #334155;
+}
+
+/* ================= FOOTER ================= */
+.footer {
+  background: #020617;
+  color: #c7d2fe;
+  padding: 25px;
   text-align: center;
 }
 
 .footer a {
-  color: #93c5fd;
-  margin: 0 10px;
+  color: #f472b6;
+  margin: 0 12px;
 }
-/* ===== SKILL HOVER EFFECT ===== */
-.skill-card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  cursor: pointer;
-}
-
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
-}
-
-/* Progress bar animation on hover */
-.skill-card:hover .level-progress {
-  filter: brightness(1.15);
-}
-/* ===== SKILL BAR GLOW EFFECT ===== */
-
-.level-progress {
-  transition: width 1s ease, box-shadow 0.4s ease;
-}
-
-/* Glow on hover */
-.skill-card:hover .level-progress {
-  box-shadow: 
-    0 0 8px rgba(37, 99, 235, 0.7),
-    0 0 16px rgba(37, 99, 235, 0.6),
-    0 0 24px rgba(37, 99, 235, 0.4);
-}
-/* ===== RAINBOW SKILL BAR ===== */
-
-.level-progress {
-  background: linear-gradient(
-    90deg,
-    #ff0000,
-    #ff7f00,
-    #ffff00,
-    #00ff00,
-    #00ffff,
-    #0000ff,
-    #8b00ff
-  );
-  background-size: 300% 100%;
-  animation: rainbowMove 4s linear infinite;
-  transition: width 1s ease, box-shadow 0.4s ease;
-}
-
-/* Glow on hover */
-.skill-card:hover .level-progress {
-  box-shadow:
-    0 0 8px rgba(255, 0, 255, 0.7),
-    0 0 16px rgba(0, 255, 255, 0.6),
-    0 0 24px rgba(255, 255, 0, 0.5);
-}
-
-/* Rainbow animation */
-@keyframes rainbowMove {
-  0%   { background-position: 0% 50%; }
-  100% { background-position: 100% 50%; }
-}
-
 

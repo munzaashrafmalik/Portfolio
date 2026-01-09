@@ -172,5 +172,18 @@ body.dark .project-card {
 .skill-card:hover .level-progress {
   filter: brightness(1.15);
 }
+/* ===== SKILL BAR GLOW EFFECT ===== */
+
+.level-progress {
+  transition: width 1s ease, box-shadow 0.4s ease;
+}
+
+/* Glow on hover */
+.skill-card:hover .level-progress {
+  box-shadow: 
+    0 0 8px rgba(37, 99, 235, 0.7),
+    0 0 16px rgba(37, 99, 235, 0.6),
+    0 0 24px rgba(37, 99, 235, 0.4);
+}
 
 

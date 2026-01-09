@@ -1,28 +1,28 @@
-/// ===== MOBILE NAVBAR =====
+console.log("JS connected");
+
+// Dark Mode
+const themeBtn = document.getElementById("theme-toggle");
+const body = document.body;
+
+if (themeBtn) {
+  themeBtn.addEventListener("click", () => {
+    body.classList.toggle("dark");
+    themeBtn.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
+  });
+}
+
+// Mobile Menu
 const navToggle = document.getElementById("nav-toggle");
 const navMenu = document.getElementById("nav-menu");
 
-if (navToggle && navMenu) {
+if (navToggle) {
   navToggle.addEventListener("click", () => {
     navMenu.classList.toggle("show");
   });
 }
 
-// ===== DARK MODE =====
-const themeToggle = document.getElementById("theme-toggle");
-const body = document.body;
-
-if (themeToggle) {
-  themeToggle.addEventListener("click", () => {
-    body.classList.toggle("dark");
-
-    // icon change
-    themeToggle.textContent = body.classList.contains("dark") ? "☀️" : "🌙";
-  });
-}
-
-// ===== FOOTER YEAR =====
-const yearEl = document.getElementById("current-year");
-if (yearEl) {
-  yearEl.textContent = new Date().getFullYear();
+// Footer Year
+const year = document.getElementById("current-year");
+if (year) {
+  year.textContent = new Date().getFullYear();
 }

@@ -328,4 +328,55 @@ body.dark .contact-form textarea {
   color: #93c5fd;
   text-decoration: none;
 }
+/* ===== ABOUT SECTION ===== */
+.about-content p {
+  max-width: 850px;
+  margin: 0 auto 16px;
+  font-size: 17px;
+  line-height: 1.8;
+  color: var(--gray);
+}
+
+/* ===== CONTACT FORM ===== */
+.contact-form {
+  max-width: 600px;
+  margin: auto;
+  background: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.contact-form .form-group {
+  margin-bottom: 15px;
+}
+
+.contact-form label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  width: 100%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #cbd5f5;
+  font-size: 15px;
+}
+
+/* ===== DARK MODE FIX ===== */
+body.dark {
+  background: #020617;
+  color: #e5e7eb;
+}
+
+body.dark .navbar,
+body.dark .skill-card,
+body.dark .project-card,
+body.dark .contact-form {
+  background: #020617;
+  color: #e5e7eb;
+}
 

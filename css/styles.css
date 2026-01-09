@@ -80,42 +80,64 @@ body.dark .navbar {
 .nav-menu a:hover::after {
   width: 100%;
 }
-
 /* ================= HERO ================= */
 .hero {
   background: linear-gradient(135deg, #1e3a8a, #312e81);
   color: white;
-  padding: 100px 20px;
+  padding: 120px 20px;          /* ⬅ thora zyada height for balance */
   text-align: center;
 }
 
+/* Name highlight */
 .hero span {
-  color: var(--accent);
+  color: #f472b6;               /* soft pink accent (female-friendly) */
 }
 
+/* Main heading */
+.hero-title {
+  font-size: 42px;
+  font-weight: 700;
+  margin-bottom: 12px;          /* ⬅ spacing fix */
+}
+
+/* Subtitle (Front-End Developer) */
 .hero-subtitle {
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 35px;          /* ⭐ MAIN FIX — buttons se gap */
   opacity: 0.9;
-  margin-bottom: 25px;
 }
 
+/* Buttons container */
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 18px;                    /* ⬅ buttons ke beech gap */
+  flex-wrap: wrap;
+}
+
+/* Buttons common */
 .btn {
-  padding: 12px 26px;
+  padding: 12px 28px;
   border-radius: 30px;
   text-decoration: none;
   font-weight: 500;
   transition: all 0.3s ease;
+  display: inline-block;
 }
 
+/* Primary button */
 .btn-primary {
   background: white;
-  color: var(--primary);
+  color: #1e3a8a;
 }
 
 .btn-primary:hover {
   transform: translateY(-3px);
-  box-shadow: 0 10px 25px rgba(255,255,255,0.3);
+  box-shadow: 0 12px 28px rgba(255,255,255,0.35);
 }
 
+/* Secondary button */
 .btn-secondary {
   border: 2px solid white;
   color: white;
@@ -123,29 +145,9 @@ body.dark .navbar {
 
 .btn-secondary:hover {
   background: white;
-  color: var(--primary);
+  color: #1e3a8a;
 }
 
-/* ================= SECTIONS ================= */
-section {
-  padding: 80px 20px;
-}
-
-.container {
-  max-width: 1100px;
-  margin: auto;
-}
-
-.section-title {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 40px;
-  color: var(--primary);
-}
-
-body.dark .section-title {
-  color: #93c5fd;
-}
 
 /* ================= ABOUT ================= */
 .about-content p {

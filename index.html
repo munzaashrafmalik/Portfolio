@@ -1,19 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Munza Ashraf Malik | Front-End Developer</title>
 
   <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="css/styles.css" />
 </head>
 <body>
 
 <!-- ===== NAVBAR ===== -->
 <nav class="navbar">
   <div class="nav-container">
-
     <div class="nav-logo">
       <a href="#home">MUNZA</a>
     </div>
@@ -24,9 +23,7 @@
       <a href="#skills" class="nav-link">Skills</a>
       <a href="#projects" class="nav-link">Projects</a>
       <a href="#contact" class="nav-link">Contact</a>
-
-      <button id="theme-toggle">🌙</button>
-
+      <button id="theme-toggle" class="theme-btn">🌙</button>
     </div>
 
     <div class="nav-toggle" id="nav-toggle">
@@ -34,32 +31,33 @@
       <span class="bar"></span>
       <span class="bar"></span>
     </div>
-
   </div>
 </nav>
 
 <!-- ===== HERO ===== -->
 <section id="home" class="hero">
   <div class="hero-container">
-    <h1 class="hero-title">
-      Hi, I'm <span class="highlight">Munza Ashraf Malik</span>
-    </h1>
-    <p class="hero-subtitle">Front-End Developer</p>
-
+    <h1>Hi, I'm <span>Munza Ashraf Malik</span></h1>
+    <p>Front-End Developer</p>
     <div class="hero-buttons">
       <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-secondary">Contact</a>
+      <a href="#contact" class="btn btn-secondary">Contact Me</a>
     </div>
   </div>
 </section>
 
 <!-- ===== ABOUT ===== -->
-<section id="about">
+<section id="about" class="about">
   <div class="container">
     <h2 class="section-title">About Me</h2>
     <p>
-      I am a beginner Front-End Developer passionate about building clean,
-      responsive and user-friendly websites using HTML, CSS and JavaScript.
+      I am a passionate beginner Front-End Developer who enjoys building clean,
+      responsive, and user-friendly websites using HTML, CSS, and JavaScript.
+    </p>
+    <p>
+      I continuously improve my skills by working on real-world projects and
+      learning modern UI/UX practices. My goal is to grow as a professional
+      web developer and create meaningful digital experiences.
     </p>
   </div>
 </section>
@@ -70,34 +68,26 @@
     <h2 class="section-title">My Skills</h2>
 
     <div class="skills-container">
-
       <div class="skill-card">
         <h3>HTML</h3>
-        <div class="skill-level">
-          <div class="level-bar">
-            <div class="level-progress" style="width:70%">70%</div>
-          </div>
+        <div class="level-bar">
+          <div class="level-progress" style="width:70%">70%</div>
         </div>
       </div>
 
       <div class="skill-card">
         <h3>CSS</h3>
-        <div class="skill-level">
-          <div class="level-bar">
-            <div class="level-progress" style="width:65%">65%</div>
-          </div>
+        <div class="level-bar">
+          <div class="level-progress" style="width:65%">65%</div>
         </div>
       </div>
 
       <div class="skill-card">
         <h3>JavaScript</h3>
-        <div class="skill-level">
-          <div class="level-bar">
-            <div class="level-progress" style="width:50%">50%</div>
-          </div>
+        <div class="level-bar">
+          <div class="level-progress" style="width:50%">50%</div>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -108,19 +98,17 @@
     <h2 class="section-title">Projects</h2>
 
     <div class="projects-grid">
-
       <div class="project-card">
-        <div class="project-content">
-          <h3>Portfolio Website</h3>
-          <p>Personal portfolio built with HTML, CSS & JS.</p>
-
-          <div class="project-links">
-            <a href="https://munzaashrafmalik.github.io/portfolio/" target="_blank">Live Demo</a>
-            <a href="https://github.com/munzaashrafmalik/portfolio" target="_blank">Source Code</a>
-          </div>
+        <h3>Portfolio Website</h3>
+        <p>
+          A fully responsive personal portfolio website built using HTML, CSS,
+          and JavaScript with dark mode and mobile-friendly design.
+        </p>
+        <div class="project-links">
+          <a href="https://munzaashrafmalik.github.io/portfolio/" target="_blank">Live Demo</a>
+          <a href="https://github.com/munzaashrafmalik/portfolio" target="_blank">Source Code</a>
         </div>
       </div>
-
     </div>
   </div>
 </section>
@@ -128,67 +116,12 @@
 <!-- ===== CONTACT ===== -->
 <section id="contact">
   <div class="container">
-    <h2 class="section-title">Contact</h2>
-
-    <p>Email: <a href="mailto:munzaashraf65@gmail.com">munzaashraf65@gmail.com</a></p>
-    <p>Location: Pakistan</p>
-  </div>
-</section>
-<!-- ABOUT SECTION -->
-<section id="about" class="about">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-
-    <div class="about-content">
-      <p>
-        Hi! I'm <strong>Munza Ashraf Malik</strong>, a passionate Front-End Developer
-        who loves building clean, responsive, and user-friendly websites using
-        HTML, CSS, and JavaScript.
-      </p>
-
-      <p>
-        As a beginner developer, I focus on writing neat and understandable code
-        while continuously improving my skills by building real-world projects.
-        I enjoy learning modern web practices and improving UI/UX design.
-      </p>
-
-      <p>
-        My goal is to grow as a professional web developer and work on meaningful
-        projects that create real impact. I believe consistency and practice
-        are the keys to success.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECT DESCRIPTION (USE INSIDE PROJECT CARD) -->
-<p class="project-description">
-  A fully responsive personal portfolio website designed to showcase my skills,
-  projects, and contact information. Built using HTML, CSS, and JavaScript with
-  clean UI, dark mode support, and mobile-friendly layout.
-</p>
-
-<!-- CONTACT SECTION -->
-<section id="contact" class="contact">
-  <div class="container">
     <h2 class="section-title">Get In Touch</h2>
 
     <form class="contact-form" id="contact-form">
-      <div class="form-group">
-        <label for="name">Name</label>
-        <input type="text" id="name" placeholder="Your Name" required>
-      </div>
-
-      <div class="form-group">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Your Email" required>
-      </div>
-
-      <div class="form-group">
-        <label for="message">Message</label>
-        <textarea id="message" rows="5" placeholder="Your Message" required></textarea>
-      </div>
-
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="5" required></textarea>
       <button type="submit" class="btn btn-primary">Send Message</button>
     </form>
   </div>
@@ -197,18 +130,16 @@
 <!-- ===== FOOTER ===== -->
 <footer class="footer">
   <div class="container">
-
     <div class="social-links">
       <a href="https://github.com/munzaashrafmalik" target="_blank">GitHub</a>
       <a href="https://www.linkedin.com/in/munza-ashraf-malik" target="_blank">LinkedIn</a>
       <a href="https://x.com/MunzaMalik96884" target="_blank">X</a>
     </div>
-
     <p>© <span id="current-year"></span> Munza Ashraf Malik</p>
-
   </div>
 </footer>
 
 <script src="js/main.js"></script>
 </body>
 </html>
+

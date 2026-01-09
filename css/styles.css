@@ -641,3 +641,17 @@ section {
   color: #2563eb;
   font-weight: 500;
 }
+/* ===== BIG & CLEAR SKILL PERCENTAGE ===== */
+.level-progress {
+  font-size: 16px;        /* percentage text bada */
+  font-weight: 700;       /* bold */
+  letter-spacing: 0.5px;
+  padding-right: 10px;
+}
+/* ===== PROJECT CARD HOVER EFFECT ===== */
+.project-card {
+  transition: transform 0.35s ease, box-shadow 0.35s ease, border 0.35s ease;
+  border: 2px solid transparent;
+}
+
+.project-card

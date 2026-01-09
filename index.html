@@ -1,111 +1,98 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Munza Ashraf Malik | Front-End Developer</title>
-    <link rel="icon" type="image/svg+xml" href="favicon.svg">
-    <link rel="stylesheet" href="css/styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Munza Ashraf Malik | Front-End Developer</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="#home">MUNZA ASHRAF MALIK</a>
-            </div>
-            <div class="nav-menu" id="nav-menu">
-                <a href="#home" class="nav-link">Home</a>
-                <a href="#about" class="nav-link">About</a>
-                <a href="#skills" class="nav-link">Skills</a>
-                <a href="#projects" class="nav-link">Projects</a>
-                <a href="#contact" class="nav-link">Contact</a>
-                <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode">
-                    <span class="theme-icon">🌙</span>
-                </button>
-            </div>
-            <div class="nav-toggle" id="nav-toggle">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-        </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <section id="home" class="hero">
-        <div class="hero-container">
-            <h1 class="hero-title">Hi, I'm <span class="highlight">MUNZA ASHRAF MALIK</span></h1>
-            <h2 class="hero-subtitle">Web Developer & UI/UX Designer</h2>
-            <p class="hero-description">
-                I create beautiful, responsive websites and applications with a focus on user experience and clean code.
-            </p>
-            <div class="hero-buttons">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
-                <a href="#contact" class="btn btn-secondary">Contact Me</a>
-            </div>
-        </div>
-    </section>
+<!-- ===== NAVBAR ===== -->
+<nav class="navbar">
+  <div class="nav-container">
 
-    <!-- About Section -->
-    <section id="about" class="about">
-        <div class="container">
-            <h2 class="section-title">About Me</h2>
-            <div class="about-content">
-                <p>Hello! I'm Munza Ashraf, a passionate beginner web developer who loves creating beautiful and functional websites. I enjoy turning ideas into reality using HTML, CSS, and JavaScript.</p>
+    <div class="nav-logo">
+      <a href="#home">MUNZA</a>
+    </div>
 
-                <p>I'm constantly learning new technologies and techniques to improve my skills. When I'm not coding, you can find me exploring new design trends or working on personal projects.</p>
+    <div class="nav-menu" id="nav-menu">
+      <a href="#home" class="nav-link">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Skills</a>
+      <a href="#projects" class="nav-link">Projects</a>
+      <a href="#contact" class="nav-link">Contact</a>
 
-                <p>As a beginner in the field, I bring fresh perspectives and enthusiasm to every project. I believe in writing clean, maintainable code and creating user-friendly interfaces that make people smile.</p>
-            </div>
-        </div>
-    </section>
+      <button id="theme-toggle" class="theme-toggle">🌙</button>
+    </div>
 
-   <!-- Skills Section -->
-<section id="skills" class="skills">
+    <div class="nav-toggle" id="nav-toggle">
+      <span class="bar"></span>
+      <span class="bar"></span>
+      <span class="bar"></span>
+    </div>
+
+  </div>
+</nav>
+
+<!-- ===== HERO ===== -->
+<section id="home" class="hero">
+  <div class="hero-container">
+    <h1 class="hero-title">
+      Hi, I'm <span class="highlight">Munza Ashraf Malik</span>
+    </h1>
+    <p class="hero-subtitle">Front-End Developer</p>
+
+    <div class="hero-buttons">
+      <a href="#projects" class="btn btn-primary">View Projects</a>
+      <a href="#contact" class="btn btn-secondary">Contact</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== ABOUT ===== -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p>
+      I am a beginner Front-End Developer passionate about building clean,
+      responsive and user-friendly websites using HTML, CSS and JavaScript.
+    </p>
+  </div>
+</section>
+
+<!-- ===== SKILLS ===== -->
+<section id="skills">
   <div class="container">
     <h2 class="section-title">My Skills</h2>
 
     <div class="skills-container">
 
-      <!-- Skill 1 -->
       <div class="skill-card">
         <h3>HTML</h3>
-        <p>Creating well-structured, semantic markup for web pages</p>
-
         <div class="skill-level">
           <div class="level-bar">
-            <div class="level-progress" style="width: 70%;" aria-valuenow="70">
-              70%
-            </div>
+            <div class="level-progress" style="width:70%">70%</div>
           </div>
         </div>
       </div>
 
-      <!-- Skill 2 -->
       <div class="skill-card">
         <h3>CSS</h3>
-        <p>Designing beautiful layouts and responsive interfaces</p>
-
         <div class="skill-level">
           <div class="level-bar">
-            <div class="level-progress" style="width: 65%;" aria-valuenow="65">
-              65%
-            </div>
+            <div class="level-progress" style="width:65%">65%</div>
           </div>
         </div>
       </div>
 
-      <!-- Skill 3 -->
       <div class="skill-card">
         <h3>JavaScript</h3>
-        <p>Adding interactivity and dynamic functionality</p>
-
         <div class="skill-level">
           <div class="level-bar">
-            <div class="level-progress" style="width: 50%;" aria-valuenow="50">
-              50%
-            </div>
+            <div class="level-progress" style="width:50%">50%</div>
           </div>
         </div>
       </div>
@@ -114,153 +101,54 @@
   </div>
 </section>
 
-    <!-- Projects Section -->
-    <section id="projects" class="projects">
-        <div class="container">
-            <h2 class="section-title">My Projects</h2>
-            <div class="projects-grid">
-                <!-- Project Card 1 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3e%3crect width='300' height='200' fill='%232563eb'/%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-size='16px'%3eProject 1%3c/text%3e%3c/svg%3e" alt="Project 1 screenshot" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Personal Portfolio Website</h3>
-                        <p class="project-description">
-                            A modern, responsive portfolio website showcasing my projects and skills with dark mode support and smooth animations.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+<!-- ===== PROJECTS ===== -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Projects</h2>
 
-                <!-- Project Card 2 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3e%3crect width='300' height='200' fill='%239333ea'/%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-size='16px'%3eProject 2%3c/text%3e%3c/svg%3e" alt="Project 2 screenshot" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Product Landing Page</h3>
-                        <p class="project-description">
-                            A responsive landing page designed to showcase products with compelling visuals, testimonials, and call-to-action buttons.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
+    <div class="projects-grid">
 
-                <!-- Project Card 3 -->
-                <div class="project-card">
-                    <div class="project-image">
-                        <img src="data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='300' height='200' viewBox='0 0 300 200'%3e%3crect width='300' height='200' fill='%2360a5fa'/%3e%3ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%23ffffff' font-family='Arial' font-size='16px'%3eProject 3%3c/text%3e%3c/svg%3e" alt="Project 3 screenshot" />
-                    </div>
-                    <div class="project-content">
-                        <h3 class="project-title">Simple Calculator</h3>
-                        <p class="project-description">
-                            An interactive calculator application with basic arithmetic operations and a clean, user-friendly interface.
-                        </p>
-                        <div class="project-tech">
-                            <span class="tech-tag">HTML</span>
-                            <span class="tech-tag">CSS</span>
-                            <span class="tech-tag">JavaScript</span>
-                        </div>
-                        <div class="project-links">
-                            <a href="#" class="project-link">Live Demo</a>
-                            <a href="#" class="project-link">Source Code</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+      <div class="project-card">
+        <div class="project-content">
+          <h3>Portfolio Website</h3>
+          <p>Personal portfolio built with HTML, CSS & JS.</p>
+
+          <div class="project-links">
+            <a href="https://munzaashrafmalik.github.io/portfolio/" target="_blank">Live Demo</a>
+            <a href="https://github.com/munzaashrafmalik/portfolio" target="_blank">Source Code</a>
+          </div>
         </div>
-    </section>
+      </div>
 
-    <!-- Contact Section -->
-    <section id="contact" class="contact">
-        <div class="container">
-            <h2 class="section-title">Get In Touch</h2>
-            <div class="contact-container">
-                <div class="contact-info">
-                    <h3 class="contact-subtitle">Have a project in mind?</h3>
-                    <p class="contact-description">
-                        I'd love to hear about your project! Feel free to reach out if you're looking for a developer or just want to connect.
-                    </p>
-                    <div class="contact-details">
-                        <div class="contact-item">
-                            <strong>Email:</strong> <a href="mailto:munzaashraf65@gmail.com">munzaashraf65@gmail.com</a>
-                        </div>
-                        <div class="contact-item">
-                            <strong>Location:</strong> Pakistan
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" id="contact-form">
-                    <div class="form-group">
-                        <label for="name">Name</label>
-                        <input type="text" id="name" name="name" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="email">Email</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="subject">Subject</label>
-                        <input type="text" id="subject" name="subject" required>
-                    </div>
-                    <div class="form-group">
-                        <label for="message">Message</label>
-                        <textarea id="message" name="message" rows="5" required></textarea>
-                    </div>
-                    <button type="submit" class="btn btn-primary">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
+    </div>
+  </div>
+</section>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Portfolio</h4>
-                    <p>Creating beautiful digital experiences with clean code and thoughtful design.</p>
-                </div>
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#home">Home</a></li>
-                        <li><a href="#projects">Projects</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-section">
-                    <h4>Connect</h4>
-                    <div class="social-links">
-                        <a href="#" aria-label="GitHub">GitHub</a>
-                        <a href="#" aria-label="LinkedIn">LinkedIn</a>
-                        <a href="#" aria-label="Twitter">Twitter</a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; <span id="current-year"></span> MUNZA ASHRAF MALIK. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
+<!-- ===== CONTACT ===== -->
+<section id="contact">
+  <div class="container">
+    <h2 class="section-title">Contact</h2>
 
-    <script src="js/main.js"></script>
+    <p>Email: <a href="mailto:munzaashraf65@gmail.com">munzaashraf65@gmail.com</a></p>
+    <p>Location: Pakistan</p>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="footer">
+  <div class="container">
+
+    <div class="social-links">
+      <a href="https://github.com/munzaashrafmalik" target="_blank">GitHub</a>
+      <a href="https://www.linkedin.com/in/munza-ashraf-malik" target="_blank">LinkedIn</a>
+      <a href="https://x.com/MunzaMalik96884" target="_blank">X</a>
+    </div>
+
+    <p>© <span id="current-year"></span> Munza Ashraf Malik</p>
+
+  </div>
+</footer>
+
+<script src="js/main.js"></script>
 </body>
 </html>

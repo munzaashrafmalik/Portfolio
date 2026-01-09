@@ -185,5 +185,36 @@ body.dark .project-card {
     0 0 16px rgba(37, 99, 235, 0.6),
     0 0 24px rgba(37, 99, 235, 0.4);
 }
+/* ===== RAINBOW SKILL BAR ===== */
+
+.level-progress {
+  background: linear-gradient(
+    90deg,
+    #ff0000,
+    #ff7f00,
+    #ffff00,
+    #00ff00,
+    #00ffff,
+    #0000ff,
+    #8b00ff
+  );
+  background-size: 300% 100%;
+  animation: rainbowMove 4s linear infinite;
+  transition: width 1s ease, box-shadow 0.4s ease;
+}
+
+/* Glow on hover */
+.skill-card:hover .level-progress {
+  box-shadow:
+    0 0 8px rgba(255, 0, 255, 0.7),
+    0 0 16px rgba(0, 255, 255, 0.6),
+    0 0 24px rgba(255, 255, 0, 0.5);
+}
+
+/* Rainbow animation */
+@keyframes rainbowMove {
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
 
 

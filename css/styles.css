@@ -659,3 +659,34 @@ section {
   box-shadow:
     0 20px 40px rgba(99, 102, 241, 0.35);
 }
+/* ===== ABOUT SECTION HOVER EFFECT ===== */
+.about {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.about:hover {
+  transform: translateY(-12px);
+  box-shadow:
+    0 20px 40px rgba(99, 102, 241, 0.25),
+    0 0 25px rgba(79, 70, 229, 0.25);
+  border-radius: 16px;
+}
+/* ===== BIG & LONG SKILL BARS ===== */
+.level-bar {
+  height: 22px;               /* bar mota */
+  width: 100%;                /* full width */
+  margin-top: 12px;
+  border-radius: 30px;
+}
+
+.level-progress {
+  height: 100%;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 22px;
+  padding-right: 12px;
+}
+.skill-card:hover .level-progress {
+  transform: scaleX(1.05);
+}
+

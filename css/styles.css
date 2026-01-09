@@ -655,3 +655,7 @@ section {
 }
 
 .project-card
+.project-card:hover {
+  box-shadow:
+    0 20px 40px rgba(99, 102, 241, 0.35);
+}

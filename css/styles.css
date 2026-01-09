@@ -157,5 +157,20 @@ body.dark .project-card {
   color: #93c5fd;
   margin: 0 10px;
 }
+/* ===== SKILL HOVER EFFECT ===== */
+.skill-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+/* Progress bar animation on hover */
+.skill-card:hover .level-progress {
+  filter: brightness(1.15);
+}
 
 

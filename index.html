@@ -93,42 +93,6 @@
   });
 </script>
 
- 
-  const skillCards = document.querySelectorAll(".skill-card");
-
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-
-        const card = entry.target;
-        const progress = card.querySelector(".level-progress");
-        const target = parseInt(card.getAttribute("data-percent"));
-
-        let count = 0;
-        progress.textContent = "0%";
-        progress.style.width = "0%";
-
-        const interval = setInterval(() => {
-          if (count >= target) {
-            clearInterval(interval);
-            progress.textContent = target + "%";
-            progress.style.width = target + "%";
-          } else {
-            count++;
-            progress.textContent = count + "%";
-            progress.style.width = count + "%";
-          }
-        }, 15);
-
-        observer.unobserve(card);
-      }
-    });
-  }, { threshold: 0.6 });
-
-  skillCards.forEach(card => observer.observe(card));
-</script>
-
-
     <div class="skill-card" data-percent="70">
   <h3>HTML</h3>
   <div class="level-bar">

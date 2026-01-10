@@ -78,6 +78,36 @@
           <div class="level-progress">0%</div>
         </div>
       </div>
+<script>
+  const skillCards = document.querySelectorAll(".skill-card");
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const card = entry.target;
+        const progress = card.querySelector(".level-progress");
+        const target = parseInt(progress.textContent);
+
+        let count = 0;
+        progress.textContent = "0%";
+
+        const interval = setInterval(() => {
+          if (count >= target) {
+            clearInterval(interval);
+            progress.textContent = target + "%";
+          } else {
+            count++;
+            progress.textContent = count + "%";
+          }
+        }, 15);
+
+        observer.unobserve(card);
+      }
+    });
+  }, { threshold: 0.6 });
+
+  skillCards.forEach(card => observer.observe(card));
+</script>
 
       <div class="skill-card" data-percent="65">
         <div class="skill-header">

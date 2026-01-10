@@ -157,19 +157,29 @@ body.dark .navbar {
   opacity: 0.9;
 }
 
-/* ================= SKILLS ================= */
-.skills-container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 25px;
+/* ================= FINAL SKILLS ================= */
+
+#skills {
+  padding: 120px 20px;
+  text-align: center;
 }
 
+.skills-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 40px;
+  justify-items: center;
+}
+
+/* Skill Card */
 .skill-card {
   background: var(--card-light);
-  padding: 25px;
-  border-radius: 16px;
-  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  padding: 40px;
+  border-radius: 24px;
+  max-width: 480px;
+  width: 100%;
   cursor: pointer;
+  transition: all 0.45s ease;
 }
 
 body.dark .skill-card {
@@ -177,21 +187,82 @@ body.dark .skill-card {
 }
 
 .skill-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 25px 50px rgba(79,70,229,0.25);
+  transform: translateY(-16px) scale(1.04);
+  box-shadow: 0 35px 70px rgba(79,70,229,0.4);
 }
 
+/* Skill Header */
+.skill-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  margin-bottom: 20px;
+}
+
+.skill-header i {
+  font-size: 34px;
+  color: var(--accent);
+  text-shadow: 0 0 15px rgba(244,114,182,0.7);
+}
+
+.skill-header h3 {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: 0.6px;
+}
+
+/* Progress Bar */
 .level-bar {
+  width: 100%;
+  height: 28px;
+  border-radius: 30px;
   background: #e5e7eb;
-  height: 14px;
-  border-radius: 10px;
   overflow: hidden;
-  margin-top: 10px;
 }
 
 body.dark .level-bar {
   background: #1e293b;
 }
+
+.level-progress {
+  width: 0%;
+  height: 100%;
+  font-size: 18px;
+  font-weight: 800;
+  line-height: 28px;
+  padding-right: 14px;
+  color: #020617;
+  border-radius: 30px;
+
+  background: linear-gradient(
+    90deg,
+    #ff0080,
+    #ff8c00,
+    #facc15,
+    #22c55e,
+    #38bdf8,
+    #6366f1,
+    #a855f7
+  );
+  background-size: 400% 100%;
+  animation: rainbowFlow 4s linear infinite;
+
+  transition: width 1.8s ease, box-shadow 0.4s ease;
+}
+
+.skill-card:hover .level-progress {
+  box-shadow:
+    0 0 18px rgba(255,0,255,0.8),
+    0 0 35px rgba(0,255,255,0.7),
+    0 0 55px rgba(255,255,0,0.6);
+}
+
+@keyframes rainbowFlow {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
 
 /* ===== RAINBOW GLOW BAR ===== */
 .level-progress {

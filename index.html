@@ -1,219 +1,451 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title> Munza Ashraf Malik | Front-End Developer </title>
-
-  <!-- CSS -->
-  <link rel="stylesheet" href="css/styles.css" />
-</head><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Web Developer Portfolio - Showcasing modern, responsive web projects">
+  <title>MUNZA ASHRAF | Web Developer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Poppins:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=11">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
 <body>
-
-<!-- ===== NAVBAR ===== -->
-<nav class="navbar">
-  <div class="nav-container">
-    <div class="nav-logo">
-      <a href="#home">MUNZA</a>
+  <!-- Navigation -->
+  <nav class="navbar" aria-label="Main navigation">
+    <div class="container navbar-container">
+      <a href="#" class="logo">MUNZA ASHRAF</a>
+      <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
+        <span class="hamburger"></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#testimonials">Testimonials</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li>
+          <button class="theme-toggle" aria-label="Toggle dark mode">
+            <i class="fas fa-moon theme-icon"></i>
+          </button>
+        </li>
+      </ul>
     </div>
+  </nav>
 
-    <div class="nav-menu" id="nav-menu">
-      <a href="#home" class="nav-link">Home</a>
-      <a href="#about" class="nav-link">About</a>
-      <a href="#skills" class="nav-link">Skills</a>
-      <a href="#projects" class="nav-link">Projects</a>
-      <a href="#contact" class="nav-link">Contact</a>
-      <button <span id="theme-toggle">🌙</span>
-
-    </div>
-
-    <div class="nav-toggle" id="nav-toggle">
-      <span class="bar"></span>
-      <span class="bar"></span>
-      <span class="bar"></span>
-    </div>
-  </div>
-</nav>
-
-<!-- ===== HERO ===== -->
-<section id="home" class="hero">
-  <div class="hero-container">
-    <h1>Hi, I'm <span>Munza Ashraf Malik</span></h1>
-    <p>Front-End Developer</p>
-    <div class="hero-buttons">
-      <a href="#projects" class="btn btn-primary">View Projects</a>
-      <a href="#contact" class="btn btn-secondary">Contact Me</a>
-    </div>
-  </div>
-</section>
-
-<!-- ===== ABOUT ===== -->
-<section id="about" class="about">
-  <div class="container">
-    <h2 class="section-title">About Me</h2>
-    <p>
-      I am a passionate beginner Front-End Developer who enjoys building clean,
-      responsive, and user-friendly websites using HTML, CSS, and JavaScript.
-    </p>
-    <p>
-      I continuously improve my skills by working on real-world projects and
-      learning modern UI/UX practices. My goal is to grow as a professional
-      web developer and create meaningful digital experiences.
-    </p>
-  </div>
-</section>
-
-<section id="skills">
-  <div class="container">
-    <h2 class="section-title">My Skills</h2>
-
-    <div class="skills-container">
-    <div class="skill-card" data-percent="70">
-  <h3>HTML</h3>
-  <div class="level-bar">
-    <div class="level-progress">0%</div>
-  </div>
-</div>
-
-<div class="skill-card" data-percent="65">
-  <h3>CSS</h3>
-  <div class="level-bar">
-    <div class="level-progress">0%</div>
-  </div>
-</div>
-
-<div class="skill-card" data-percent="50">
-  <h3>JavaScript</h3>
-  <div class="level-bar">
-    <div class="level-progress">0%</div>
-  </div>
-</div>
-
-</section>
- <script>
-  const toggleBtn = document.getElementById("theme-toggle");
-
-  toggleBtn.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    if (document.body.classList.contains("dark")) {
-      toggleBtn.textContent = "☀️";
-    } else {
-      toggleBtn.textContent = "🌙";
-    }
-  });
-</script>
-
-<!-- ===== PROJECTS ===== -->
-<section id="projects">
-  <div class="container">
-    <h2 class="section-title">Projects</h2>
-
-    <div class="projects-grid">
-      <div class="project-card">
-        <h3>Portfolio Website</h3>
-        <p>
-          A fully responsive personal portfolio website built using HTML, CSS,
-          and JavaScript with dark mode and mobile-friendly design.
-        </p>
-        <div class="project-links">
-          <a href="https://munzaashrafmalik.github.io/portfolio/" target="_blank">Live Demo</a>
-          <a href="https://github.com/munzaashrafmalik/portfolio" target="_blank">Source Code</a>
+  <main>
+    <!-- Hero Section -->
+    <section id="hero" class="section hero">
+      <div class="container hero-container">
+        <div class="hero-content">
+          <h1 class="hero-title">
+            <span class="hero-title-line">Hi, I'm <span class="text-primary">MUNZA ASHRAF</span></span>
+          </h1>
+          <p class="hero-subtitle">Web Developer crafting modern, accessible digital experiences</p>
+          <p class="hero-description">
+            I build responsive websites and applications with clean code and thoughtful design.
+            Focused on performance, accessibility, and user experience.
+          </p>
+          <div class="hero-cta">
+            <a href="#projects" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-outline">Get In Touch</a>
+          </div>
+        </div>
+        <div class="hero-image">
+          <div class="hero-image-wrapper">
+            <img src="assets/profile.jpg (2).png" alt="Munza Ashraf" class="hero-profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+            <div class="hero-image-placeholder">
+              <i class="fas fa-user"></i>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="section projects">
+      <div class="container">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">A selection of my recent work</p>
+        
+        <div class="projects-grid">
+          <!-- Project Card 1: Weather App -->
+          <article class="card project-card">
+            <div class="card-image project-image">
+              <div class="project-image-placeholder weather-bg">
+                <i class="fas fa-cloud-sun"></i>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">Weather App</h3>
+              <p class="card-description">
+                A beautiful weather application showing real-time weather data for any city. 
+                Features 5-day forecast, temperature animations, and location-based weather.
+              </p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">API</span>
+              </div>
+              <div class="card-links">
+                <a href="https://munzaashrafmalik.github.io/weather-app/" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="https://github.com/munzaashrafmalik" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 2: AI Task Manager -->
+          <article class="card project-card">
+            <div class="card-image project-image">
+              <div class="project-image-placeholder ai-bg">
+                <i class="fas fa-robot"></i>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">AI Task Manager</h3>
+              <p class="card-description">
+                An intelligent task management app powered by AI. Organize, prioritize, 
+                and complete your tasks smarter with AI-powered suggestions and automation.
+              </p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">AI</span>
+                <span class="tag">Vercel</span>
+              </div>
+              <div class="card-links">
+                <a href="https://ai-task-manager-chi.vercel.app/" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="fas fa-external-link-alt"></i> Live Demo
+                </a>
+                <a href="https://github.com/munzaashrafmalik" class="btn btn-outline btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> GitHub
+                </a>
+              </div>
+            </div>
+          </article>
+
+          <!-- Project Card 3: GitHub Profile -->
+          <article class="card project-card">
+            <div class="card-image project-image">
+              <div class="project-image-placeholder github-bg">
+                <i class="fab fa-github"></i>
+              </div>
+            </div>
+            <div class="card-content">
+              <h3 class="card-title">GitHub Profile</h3>
+              <p class="card-description">
+                Explore my collection of open-source projects, contributions, and code. 
+                From web apps to utilities, discover my coding journey and repositories.
+              </p>
+              <div class="project-tags">
+                <span class="tag">Git</span>
+                <span class="tag">Open Source</span>
+                <span class="tag">Projects</span>
+              </div>
+              <div class="card-links">
+                <a href="https://github.com/munzaashrafmalik" class="btn btn-primary btn-sm" target="_blank" rel="noopener noreferrer">
+                  <i class="fab fa-github"></i> View Profile
+                </a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="section testimonials">
+      <div class="container">
+        <h2 class="section-title">What People Say</h2>
+        <p class="section-subtitle">Kind words from clients and colleagues</p>
+        
+        <div class="testimonials-grid">
+          <!-- Testimonial 1 -->
+          <article class="card testimonial-card">
+            <div class="card-content testimonial-content">
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <blockquote class="testimonial-text">
+                "Munza transformed our outdated website into a modern, user-friendly platform. Our bounce rate decreased by 40% and conversions increased significantly. Highly recommend!"
+              </blockquote>
+              <footer class="testimonial-author">
+                <div class="author-avatar">SK</div>
+                <div class="author-info">
+                  <cite class="author-name">Sarah Khan</cite>
+                  <span class="author-title">CEO, TechVision Solutions</span>
+                </div>
+              </footer>
+            </div>
+          </article>
+
+          <!-- Testimonial 2 -->
+          <article class="card testimonial-card">
+            <div class="card-content testimonial-content">
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <blockquote class="testimonial-text">
+                "Working with Munza was a game-changer for our startup. She delivered a stunning e-commerce site ahead of schedule. Her attention to detail and responsiveness is unmatched!"
+              </blockquote>
+              <footer class="testimonial-author">
+                <div class="author-avatar">AR</div>
+                <div class="author-info">
+                  <cite class="author-name">Ahmed Raza</cite>
+                  <span class="author-title">Founder, ShopEasy</span>
+                </div>
+              </footer>
+            </div>
+          </article>
+
+          <!-- Testimonial 3 -->
+          <article class="card testimonial-card">
+            <div class="card-content testimonial-content">
+              <div class="testimonial-rating" aria-label="5 out of 5 stars">
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+                <span class="star">★</span>
+              </div>
+              <blockquote class="testimonial-text">
+                "Exceptional developer! Munza built our AI Task Manager with clean code and perfect UI. The app runs smoothly and our users love the intuitive design. Will definitely work together again!"
+              </blockquote>
+              <footer class="testimonial-author">
+                <div class="author-avatar">MF</div>
+                <div class="author-info">
+                  <cite class="author-name">Maria Farooq</cite>
+                  <span class="author-title">Product Manager, InnovateTech</span>
+                </div>
+              </footer>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="section about">
+      <div class="container">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+          <div class="about-grid">
+            <div class="about-image">
+              <div class="about-image-wrapper">
+                <img src="assets/profile.jpg (2).png" alt="Munza Ashraf" class="about-profile-img" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+                <div class="about-image-placeholder">
+                  <i class="fas fa-user"></i>
+                </div>
+                <div class="about-image-badge">
+                  <span class="badge-name">Munza Ashraf</span>
+                </div>
+              </div>
+            </div>
+            <div class="about-text-content">
+              <h3 class="about-heading">Hello! I'm <span class="text-primary">MUNZA ASHRAF</span></h3>
+              <p class="about-text">
+                I'm a passionate web developer with a focus on creating clean, efficient,
+                and user-friendly digital experiences. I believe in writing semantic,
+                accessible code that works for everyone.
+              </p>
+              <p class="about-text">
+                My journey in web development started with curiosity and has grown into a 
+                deep passion for building things that live on the internet. I love turning 
+                complex problems into simple, beautiful, and intuitive designs.
+              </p>
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Clean Code</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Responsive Design</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Accessibility First</span>
+                </div>
+                <div class="highlight-item">
+                  <i class="fas fa-check-circle"></i>
+                  <span>Performance Optimized</span>
+                </div>
+              </div>
+              <div class="about-stats">
+                <div class="stat-item">
+                  <span class="stat-number">10+</span>
+                  <span class="stat-label">Projects Completed</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">100%</span>
+                  <span class="stat-label">Client Satisfaction</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-number">24/7</span>
+                  <span class="stat-label">Support Available</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="skills-container">
+            <h3 class="skills-title"><i class="fas fa-code"></i> Skills & Technologies</h3>
+            
+            <!-- Frontend Skills -->
+            <div class="skill-category">
+              <h4 class="skill-category-title"><i class="fas fa-palette"></i> Frontend Development</h4>
+              <div class="skills-grid">
+                <div class="skill-card">
+                  <div class="skill-icon html">
+                    <i class="fab fa-html5"></i>
+                  </div>
+                  <span class="skill-name">HTML5</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress html" style="width: 95%"></div>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon css">
+                    <i class="fab fa-css3-alt"></i>
+                  </div>
+                  <span class="skill-name">CSS3</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress css" style="width: 90%"></div>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon js">
+                    <i class="fab fa-js"></i>
+                  </div>
+                  <span class="skill-name">JavaScript</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress js" style="width: 85%"></div>
+                  </div>
+                </div>
+                <div class="skill-card">
+                  <div class="skill-icon react">
+                    <i class="fab fa-react"></i>
+                  </div>
+                  <span class="skill-name">React</span>
+                  <div class="skill-bar">
+                    <div class="skill-progress react" style="width: 75%"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+            <!-- Tools & Others -->
+            <div class="skill-category">
+              <h4 class="skill-category-title"><i class="fas fa-tools"></i> Tools & Technologies</h4>
+              <div class="skills-tags">
+                <span class="skill-tag"><i class="fas fa-mobile-alt"></i> Responsive Design</span>
+                <span class="skill-tag"><i class="fas fa-universal-access"></i> Accessibility (WCAG)</span>
+                <span class="skill-tag"><i class="fab fa-git-alt"></i> Git & GitHub</span>
+                <span class="skill-tag"><i class="fas fa-terminal"></i> Command Line</span>
+                <span class="skill-tag"><i class="fas fa-search"></i> SEO Basics</span>
+                <span class="skill-tag"><i class="fas fa-bolt"></i> Performance</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <h2 class="section-title">Get In Touch</h2>
+        <p class="section-subtitle">Have a project in mind? Let's talk!</p>
+        
+        <form class="contact-form" action="#" method="POST" novalidate>
+          <div class="form-group">
+            <label for="name" class="form-label">Name</label>
+            <input 
+              type="text" 
+              id="name" 
+              name="name" 
+              class="form-input" 
+              placeholder="Your name"
+              required
+              autocomplete="name"
+            >
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+          
+          <div class="form-group">
+            <label for="email" class="form-label">Email</label>
+            <input
+              type="email"
+              id="email"
+              name="email"
+              class="form-input"
+              placeholder="munzamalik09@gmail.com"
+              required
+              autocomplete="email"
+            >
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+
+          <div class="form-group">
+            <label for="message" class="form-label">Message</label>
+            <textarea
+              id="message"
+              name="message"
+              class="form-input form-textarea"
+              placeholder="Tell me about your project..."
+              rows="5"
+              required
+            ></textarea>
+            <span class="form-error" aria-live="polite"></span>
+          </div>
+
+          <button type="submit" class="btn btn-primary btn-full">
+            Send Message
+          </button>
+          
+          <p class="form-success" aria-live="polite"></p>
+        </form>
+        
+        <div class="contact-links">
+          <a href="mailto:munzamalik09@gmail.com" class="contact-link">
+            <i class="fas fa-envelope"></i> munzamalik09@gmail.com
+          </a>
+          <a href="https://www.linkedin.com/in/munza-ashraf-malik" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-linkedin"></i> LinkedIn
+          </a>
+          <a href="https://github.com/munzaashrafmalik" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-github"></i> GitHub
+          </a>
+          <a href="https://x.com/MunzaMalik96884" class="contact-link" target="_blank" rel="noopener noreferrer">
+            <i class="fab fa-x-twitter"></i> X (Twitter)
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p class="footer-text">&copy; 2026 MUNZA ASHRAF. All rights reserved.</p>
+      <p class="footer-text">Built with HTML, CSS & JavaScript</p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- ===== CONTACT ===== -->
-<section id="contact">
-<div class="contact-info">
-  <p>
-    <strong>Email:</strong>
-    <a href="mailto:munzaashraf65@gmail.com">
-      munzaashraf65@gmail.com
-    </a>
-  </p>
-
-  <p>
-    <strong>Location:</strong> Pakistan
-  </p>
-</div>
-  <div class="container">
-    <h2 class="section-title">Get In Touch</h2>
-
-    <form class="contact-form" id="contact-form">
-      <input type="text" placeholder="Your Name" required />
-      <input type="email" placeholder="Your Email" required />
-      <textarea placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit" class="btn btn-primary">Send Message</button>
-    </form>
-  </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer">
-  <div class="container">
-   <div class="social-links">
-  <a href="https://github.com/munzaashrafmalik" target="_blank">
-    <i class="fab fa-github"></i>
-  </a>
-  <a href="https://www.linkedin.com/in/munza-ashraf-malik" target="_blank">
-    <i class="fab fa-linkedin-in"></i>
-  </a>
-  <a href="https://x.com/MunzaMalik96884" target="_blank">
-    <i class="fab fa-x-twitter"></i>
-  </a>
-</div>
-    <p>© <span id="current-year"></span> Munza Ashraf Malik</p>
-  </div>
-</footer>
-
-<script src="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
- <script>
-  const skillCards = document.querySelectorAll(".skill-card");
-
-  const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-      if (entry.isIntersecting) {
-        const card = entry.target;
-        const progress = card.querySelector(".level-progress");
-        const target = card.getAttribute("data-percent");
-
-        let count = 0;
-        progress.style.width = "0%";
-        progress.textContent = "0%";
-
-        const interval = setInterval(() => {
-          if (count >= target) {
-            clearInterval(interval);
-          } else {
-            count++;
-            progress.style.width = count + "%";
-            progress.textContent = count + "%";
-          }
-        }, 15);
-
-        observer.unobserve(card);
-      }
-    });
-  }, { threshold: 0.6 });
-
-  skillCards.forEach(card => observer.observe(card));
-</script>
-  <script>
-  const toggle = document.getElementById("theme-toggle");
-
-  toggle.addEventListener("click", () => {
-    document.body.classList.toggle("dark");
-
-    toggle.textContent = 
-      document.body.classList.contains("dark") ? "☀️" : "🌙";
-  });
-</script>
-
 </html>
-

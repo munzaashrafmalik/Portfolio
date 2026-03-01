@@ -1,122 +1,272 @@
-// Theme Toggle Functionality
-document.addEventListener('DOMContentLoaded', function() {
-    const themeToggle = document.getElementById('theme-toggle');
-    const body = document.body;
+/**
+ * Portfolio Website - Main JavaScript
+ * Handles: Navigation, Dark Mode, Form Validation, Smooth Scroll
+ */
 
-    // Check for saved theme preference or respect OS preference
-    const savedTheme = localStorage.getItem('theme');
-    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)');
+'use strict';
 
-    // Apply the theme
-    if (savedTheme === 'dark' || (!savedTheme && prefersDarkScheme.matches)) {
-        body.setAttribute('data-theme', 'dark');
-        themeToggle.innerHTML = '<span>☀️</span>';
-    } else {
-        body.removeAttribute('data-theme');
-        themeToggle.innerHTML = '<span>🌙</span>';
-    }
+// ==================================
+// DOM Elements
+// ==================================
+const navToggle = document.querySelector('.nav-toggle');
+const navLinks = document.querySelector('.nav-links');
+const themeToggle = document.querySelector('.theme-toggle');
+const themeIcon = document.querySelector('.theme-icon');
+const contactForm = document.querySelector('.contact-form');
+const navLinksItems = document.querySelectorAll('.nav-links a');
 
-    // Toggle theme on button click
-    themeToggle.addEventListener('click', function() {
-        if (body.getAttribute('data-theme') === 'dark') {
-            body.removeAttribute('data-theme');
-            localStorage.setItem('theme', 'light');
-            themeToggle.innerHTML = '<span>🌙</span>';
-        } else {
-            body.setAttribute('data-theme', 'dark');
-            localStorage.setItem('theme', 'dark');
-            themeToggle.innerHTML = '<span>☀️</span>';
-        }
-    });
+// ==================================
+// Mobile Navigation
+// ==================================
+function toggleNav() {
+  const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+  navToggle.setAttribute('aria-expanded', !isExpanded);
+  navLinks.classList.toggle('active');
+}
 
-    // Smooth scrolling for anchor links
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            const target = document.querySelector(this.getAttribute('href'));
-            if (target) {
-                target.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        });
-    });
+navToggle?.addEventListener('click', toggleNav);
 
-    // Navbar scroll effect
-    let lastScrollTop = 0;
-    const navbar = document.querySelector('.navbar');
-
-    window.addEventListener('scroll', function() {
-        let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-        if (scrollTop > lastScrollTop && scrollTop > 100) {
-            // Scrolling down - hide navbar
-            navbar.style.transform = 'translateY(-100%)';
-        } else {
-            // Scrolling up - show navbar
-            navbar.style.transform = 'translateY(0)';
-        }
-
-        lastScrollTop = scrollTop;
-    });
-
-    // Hamburger menu functionality
-    const hamburger = document.querySelector('.hamburger');
-    const navMenu = document.querySelector('.nav-menu');
-
-    if (hamburger) {
-        hamburger.addEventListener('click', function() {
-            hamburger.classList.toggle('active');
-            navMenu.classList.toggle('active');
-        });
-    }
-
-    // Close mobile menu when clicking on a nav link
-    document.querySelectorAll('.nav-link').forEach(link => {
-        link.addEventListener('click', () => {
-            if (hamburger && hamburger.classList.contains('active')) {
-                hamburger.classList.remove('active');
-                navMenu.classList.remove('active');
-            }
-        });
-    });
-
-    // Intersection Observer for animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.style.opacity = '1';
-                entry.target.style.transform = 'translateY(0)';
-            }
-        });
-    }, observerOptions);
-
-    // Observe elements that should animate when scrolled into view
-    document.querySelectorAll('.project-card, .section-title').forEach(el => {
-        el.style.opacity = '0';
-        el.style.transform = 'translateY(20px)';
-        el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-        observer.observe(el);
-    });
+// Close mobile nav when clicking a link
+navLinksItems.forEach(link => {
+  link.addEventListener('click', () => {
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navLinks?.classList.remove('active');
+  });
 });
 
-// Form submission handler (if contact form is added later)
-function handleFormSubmission(event) {
-    event.preventDefault();
+// Close mobile nav when clicking outside
+document.addEventListener('click', (e) => {
+  if (!navToggle?.contains(e.target) && !navLinks?.contains(e.target)) {
+    navToggle?.setAttribute('aria-expanded', 'false');
+    navLinks?.classList.remove('active');
+  }
+});
 
-    const formData = new FormData(event.target);
-    const formObject = Object.fromEntries(formData);
+// ==================================
+// Dark Mode
+// ==================================
+const THEME_KEY = 'portfolio-theme';
+const DARK_THEME = 'dark';
+const LIGHT_THEME = 'light';
 
-    // Here you would typically send the form data to your backend
-    console.log('Form submitted:', formObject);
-
-    // Show success message
-    alert('Thank you for your message! I will get back to you soon.');
-    event.target.reset();
+function getPreferredTheme() {
+  const savedTheme = localStorage.getItem(THEME_KEY);
+  if (savedTheme) {
+    return savedTheme;
+  }
+  return window.matchMedia('(prefers-color-scheme: dark)').matches ? DARK_THEME : LIGHT_THEME;
 }
+
+function setTheme(theme) {
+  document.documentElement.setAttribute('data-theme', theme);
+  themeIcon.className = theme === DARK_THEME ? 'fas fa-sun theme-icon' : 'fas fa-moon theme-icon';
+  localStorage.setItem(THEME_KEY, theme);
+}
+
+function toggleTheme() {
+  const currentTheme = document.documentElement.getAttribute('data-theme');
+  const newTheme = currentTheme === DARK_THEME ? LIGHT_THEME : DARK_THEME;
+  setTheme(newTheme);
+}
+
+// Initialize theme on load
+setTheme(getPreferredTheme());
+
+// Listen for system theme changes
+window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+  if (!localStorage.getItem(THEME_KEY)) {
+    setTheme(e.matches ? DARK_THEME : LIGHT_THEME);
+  }
+});
+
+themeToggle?.addEventListener('click', toggleTheme);
+
+// ==================================
+// Smooth Scroll for Anchor Links
+// ==================================
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function (e) {
+    const href = this.getAttribute('href');
+    if (href === '#') return;
+    
+    const target = document.querySelector(href);
+    if (target) {
+      e.preventDefault();
+      const headerOffset = 70;
+      const elementPosition = target.getBoundingClientRect().top;
+      const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: 'smooth'
+      });
+    }
+  });
+});
+
+// ==================================
+// Form Validation
+// ==================================
+const formInputs = contactForm?.querySelectorAll('.form-input');
+const formErrorElements = contactForm?.querySelectorAll('.form-error');
+const formSuccessElement = contactForm?.querySelector('.form-success');
+
+function showError(input, errorElement, message) {
+  input.classList.add('error');
+  errorElement.textContent = message;
+}
+
+function clearError(input, errorElement) {
+  input.classList.remove('error');
+  errorElement.textContent = '';
+}
+
+function validateEmail(email) {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email);
+}
+
+function validateForm(e) {
+  e.preventDefault();
+  let isValid = true;
+
+  // Validate Name
+  const nameInput = document.getElementById('name');
+  const nameError = nameInput?.parentElement?.querySelector('.form-error');
+  if (!nameInput?.value.trim()) {
+    showError(nameInput, nameError, 'Name is required');
+    isValid = false;
+  } else {
+    clearError(nameInput, nameError);
+  }
+
+  // Validate Email
+  const emailInput = document.getElementById('email');
+  const emailError = emailInput?.parentElement?.querySelector('.form-error');
+  if (!emailInput?.value.trim()) {
+    showError(emailInput, emailError, 'Email is required');
+    isValid = false;
+  } else if (!validateEmail(emailInput.value)) {
+    showError(emailInput, emailError, 'Please enter a valid email');
+    isValid = false;
+  } else {
+    clearError(emailInput, emailError);
+  }
+
+  // Validate Message
+  const messageInput = document.getElementById('message');
+  const messageError = messageInput?.parentElement?.querySelector('.form-error');
+  if (!messageInput?.value.trim()) {
+    showError(messageInput, messageError, 'Message is required');
+    isValid = false;
+  } else {
+    clearError(messageInput, messageError);
+  }
+
+  if (isValid) {
+    // Form is valid - show success message
+    // In production, you would submit the form data here
+    if (formSuccessElement) {
+      formSuccessElement.textContent = 'Thank you! Your message has been sent.';
+    }
+    contactForm?.reset();
+    
+    // Clear success message after 5 seconds
+    setTimeout(() => {
+      if (formSuccessElement) {
+        formSuccessElement.textContent = '';
+      }
+    }, 5000);
+  }
+}
+
+// Clear errors on input
+formInputs?.forEach(input => {
+  input.addEventListener('input', function() {
+    const errorElement = this.parentElement?.querySelector('.form-error');
+    clearError(this, errorElement);
+  });
+});
+
+contactForm?.addEventListener('submit', validateForm);
+
+// ==================================
+// Scroll Animation Observer
+// ==================================
+const observerOptions = {
+  root: null,
+  rootMargin: '0px',
+  threshold: 0.1
+};
+
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = '1';
+      entry.target.style.transform = 'translateY(0)';
+    }
+  });
+}, observerOptions);
+
+// Observe project cards for animation
+document.querySelectorAll('.project-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(30px)';
+  card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+  observer.observe(card);
+});
+
+// Observe testimonial cards for animation
+document.querySelectorAll('.testimonial-card').forEach((card, index) => {
+  card.style.opacity = '0';
+  card.style.transform = 'translateY(30px)';
+  card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+  observer.observe(card);
+});
+
+// ==================================
+// Active Navigation Link on Scroll
+// ==================================
+const sections = document.querySelectorAll('section[id]');
+
+function highlightNavLink() {
+  const scrollY = window.pageYOffset;
+
+  sections.forEach(section => {
+    const sectionHeight = section.offsetHeight;
+    const sectionTop = section.offsetTop - 100;
+    const sectionId = section.getAttribute('id');
+    const navLink = document.querySelector(`.nav-links a[href="#${sectionId}"]`);
+
+    if (scrollY > sectionTop && scrollY <= sectionTop + sectionHeight) {
+      navLink?.classList.add('active');
+    } else {
+      navLink?.classList.remove('active');
+    }
+  });
+}
+
+window.addEventListener('scroll', highlightNavLink);
+
+// ==================================
+// Header Shadow on Scroll
+// ==================================
+const navbar = document.querySelector('.navbar');
+
+function toggleHeaderShadow() {
+  if (window.scrollY > 50) {
+    navbar?.style.setProperty('box-shadow', 'var(--shadow-md)');
+  } else {
+    navbar?.style.setProperty('box-shadow', 'none');
+  }
+}
+
+window.addEventListener('scroll', toggleHeaderShadow);
+
+// ==================================
+// Initialize
+// ==================================
+document.addEventListener('DOMContentLoaded', () => {
+  highlightNavLink();
+  toggleHeaderShadow();
+});

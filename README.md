@@ -2,7 +2,7 @@
 
 🌐 Front-End Developer 💻 Skills: HTML, CSS, JavaScript 🎨 Passionate about clean UI & responsive design 📍 Pakistan
 
-🔗 Portfolio: https://munzaashrafmalik.github.io/portfolio/
+🔗 Portfolio:(https://munzaashrafmalik.netlify.app/)
 
 🔗 LinkedIn: https://www.linkedin.com/in/munza-ashraf-malik
 

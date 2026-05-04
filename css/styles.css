@@ -234,7 +234,7 @@ button {
 
 @media (max-width: 768px) {
   .section {
-    padding: var(--space-10) 0;
+    padding: var(--space-8) 0;
   }
 }
 
@@ -1834,34 +1834,20 @@ button {
 /* ==================================
    Mobile-Specific Fixes
    ================================== */
-@media (max-width: 600px) {
+/* Keep desktop layout on all screen sizes - just scale down */
+@media (max-width: 900px) {
+  .container {
+    padding: 0 var(--space-3);
+  }
+
   .section {
-    padding: var(--space-10) 0;
+    padding: var(--space-8) 0;
   }
 
-  .section-title {
-    font-size: var(--text-2xl);
-  }
-
-  .hero-title {
-    font-size: var(--text-2xl);
-  }
-
-  .hero-subtitle {
-    font-size: var(--text-base);
-  }
-
-  .hero-description {
-    font-size: var(--text-sm);
-  }
-
-  .hero-cta {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .hero-cta .btn {
-    width: 100%;
+  /* Keep desktop grid layouts */
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-8);
   }
 
   .hero-image-wrapper {
@@ -1869,12 +1855,143 @@ button {
     height: 200px;
   }
 
-  .about-highlights {
-    grid-template-columns: 1fr;
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-4);
+  }
+
+  .about-grid {
+    grid-template-columns: 250px 1fr;
+    gap: var(--space-6);
   }
 
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
+  }
+
+  .contact-links {
+    gap: var(--space-4);
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding: var(--space-6) 0;
+  }
+
+  .section-title {
+    font-size: var(--text-2xl);
+  }
+
+  /* Keep desktop layout, just smaller */
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-6);
+  }
+
+  .hero-title {
+    font-size: var(--text-2xl);
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-sm);
+  }
+
+  .hero-description {
+    font-size: var(--text-xs);
+  }
+
+  .hero-cta {
+    gap: var(--space-2);
+  }
+
+  .hero-cta .btn {
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
+  }
+
+  .hero-image-wrapper {
+    width: 150px;
+    height: 150px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+
+  .card-content {
+    padding: var(--space-3);
+  }
+
+  .card-title {
+    font-size: var(--text-sm);
+  }
+
+  .card-description {
+    font-size: var(--text-xs);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+  }
+
+  .about-grid {
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-4);
+  }
+
+  .about-heading {
+    font-size: var(--text-xl);
+  }
+
+  .about-text {
+    font-size: var(--text-xs);
+  }
+
+  .about-highlights {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-2);
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
+    padding: var(--space-4);
+  }
+
+  .stat-number {
+    font-size: var(--text-xl);
+  }
+
+  .stat-label {
+    font-size: var(--text-xs);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+  }
+
+  .skill-card {
+    padding: var(--space-3);
+  }
+
+  .skill-icon {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+
+  .skill-name {
+    font-size: var(--text-xs);
   }
 
   .skill-tag {
@@ -1882,36 +1999,71 @@ button {
     padding: var(--space-2) var(--space-3);
   }
 
+  .contact-links {
+    gap: var(--space-3);
+  }
+
   .contact-link {
     font-size: var(--text-xs);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) var(--space-3);
   }
 
   .contact-link i {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
+  }
+
+  .nav-links {
+    gap: var(--space-2);
   }
 }
 
 @media (max-width: 400px) {
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
+  }
+
   .hero-title {
-    font-size: var(--text-xl);
+    font-size: var(--text-lg);
   }
 
   .hero-subtitle {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
   }
 
   .hero-image-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 120px;
+    height: 120px;
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+  }
+
+  .about-grid {
+    grid-template-columns: 150px 1fr;
+    gap: var(--space-3);
   }
 
   .about-stats {
-    padding: var(--space-4);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+    padding: var(--space-3);
   }
 
   .stat-number {
-    font-size: var(--text-2xl);
+    font-size: var(--text-lg);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
   }
 
   .nav-links {

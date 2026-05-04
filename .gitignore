@@ -24,3 +24,7 @@ build/
 # Temporary files
 *.tmp
 .cache/
+
+# Nested repositories (old copies)
+portfolio/
+portfolio-website/

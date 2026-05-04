@@ -1185,12 +1185,6 @@ button {
   margin: var(--space-8) 0;
 }
 
-@media (max-width: 600px) {
-  .about-highlights {
-    grid-template-columns: 1fr;
-  }
-}
-
 .highlight-item {
   display: flex;
   align-items: center;
@@ -1215,12 +1209,6 @@ button {
   border-radius: var(--radius-xl);
   margin-top: var(--space-8);
   border: 1px solid var(--border);
-}
-
-@media (max-width: 600px) {
-  .about-stats {
-    grid-template-columns: 1fr;
-  }
 }
 
 .stat-item {

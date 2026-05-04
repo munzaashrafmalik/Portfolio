@@ -1723,40 +1723,36 @@ button {
    Mobile-Specific Fixes
    ================================== */
 @media (max-width: 900px) {
+  /* Keep desktop layout, just scale down */
   .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: var(--space-8);
-  }
-
-  .hero-content {
-    order: 2;
-  }
-
-  .hero-image {
-    order: 1;
-  }
-
-  .hero-cta {
-    justify-content: center;
-  }
-
-  .hero-title {
-    font-size: var(--text-3xl);
-  }
-
-  .hero-image-wrapper {
-    width: 250px;
-    height: 250px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
     gap: var(--space-6);
   }
 
-  .about-heading {
+  .hero-title {
     font-size: var(--text-2xl);
+  }
+
+  .hero-subtitle {
+    font-size: var(--text-sm);
+  }
+
+  .hero-description {
+    font-size: var(--text-xs);
+  }
+
+  .hero-image-wrapper {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-grid {
+    grid-template-columns: 200px 1fr;
+    gap: var(--space-4);
+  }
+
+  .about-heading {
+    font-size: var(--text-xl);
   }
 
   .about-highlights {
@@ -1764,12 +1760,13 @@ button {
   }
 
   .about-stats {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-3);
   }
 
   .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-3);
   }
 
   .testimonials-grid {
@@ -1796,83 +1793,139 @@ button {
 }
 
 @media (max-width: 600px) {
+  /* Keep desktop layout, just smaller sizes */
   .section {
-    padding: var(--space-10) 0;
+    padding: var(--space-6) 0;
   }
 
   .section-title {
-    font-size: var(--text-2xl);
+    font-size: var(--text-xl);
+  }
+
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-4);
   }
 
   .hero-title {
-    font-size: var(--text-2xl);
+    font-size: var(--text-lg);
   }
 
   .hero-subtitle {
-    font-size: var(--text-base);
+    font-size: var(--text-xs);
   }
 
   .hero-description {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
   }
 
   .hero-cta {
-    flex-direction: column;
-    width: 100%;
+    gap: var(--space-2);
   }
 
   .hero-cta .btn {
-    width: 100%;
+    padding: var(--space-2) var(--space-3);
+    font-size: var(--text-xs);
   }
 
   .hero-image-wrapper {
-    width: 200px;
-    height: 200px;
+    width: 140px;
+    height: 140px;
+  }
+
+  .about-grid {
+    grid-template-columns: 150px 1fr;
+    gap: var(--space-3);
   }
 
   .about-highlights {
-    grid-template-columns: 1fr;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+  }
+
+  .about-stats {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
   }
 
   .skills-grid {
-    grid-template-columns: 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-2);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
   }
 
   .skill-tag {
     font-size: var(--text-xs);
-    padding: var(--space-2) var(--space-3);
+    padding: var(--space-1) var(--space-2);
   }
 
   .contact-link {
     font-size: var(--text-xs);
-    padding: var(--space-2) var(--space-4);
+    padding: var(--space-2) var(--space-3);
   }
 
   .contact-link i {
-    font-size: var(--text-base);
+    font-size: var(--text-sm);
   }
 }
 
 @media (max-width: 400px) {
+  /* Keep desktop layout even on very small screens */
+  .hero-container {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-3);
+  }
+
   .hero-title {
-    font-size: var(--text-xl);
+    font-size: var(--text-base);
   }
 
   .hero-subtitle {
-    font-size: var(--text-sm);
+    font-size: var(--text-xs);
   }
 
   .hero-image-wrapper {
-    width: 180px;
-    height: 180px;
+    width: 100px;
+    height: 100px;
+  }
+
+  .about-grid {
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-2);
   }
 
   .about-stats {
-    padding: var(--space-4);
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-2);
+    padding: var(--space-3);
   }
 
   .stat-number {
-    font-size: var(--text-2xl);
+    font-size: var(--text-lg);
+  }
+
+  .skills-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-1);
+  }
+
+  .projects-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-1);
+  }
+
+  .testimonials-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-1);
   }
 
   .nav-links {

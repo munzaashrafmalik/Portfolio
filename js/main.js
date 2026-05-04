@@ -111,14 +111,20 @@ function setView(view) {
 
 function toggleView() {
   const currentView = document.documentElement.getAttribute('data-view');
+  console.log('Current view:', currentView);
 
   if (currentView === null) {
+    console.log('Switching to MOBILE view');
     setView(MOBILE_VIEW);
   } else if (currentView === MOBILE_VIEW) {
+    console.log('Switching to DESKTOP view');
     setView(DESKTOP_VIEW);
   } else {
+    console.log('Switching to AUTO view');
     setView(null);
   }
+
+  console.log('New view:', document.documentElement.getAttribute('data-view'));
 }
 
 // Initialize view on load

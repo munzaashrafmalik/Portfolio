@@ -28,3 +28,18 @@ build/
 # Nested repositories (old copies)
 portfolio/
 portfolio-website/
+
+# Claude Code files
+.claude/
+
+# Testing files
+tests/
+test-results/
+screenshots/
+playwright.config.js
+package.json
+package-lock.json
+
+# Documentation files
+CLAUDE.md
+QWEN.md

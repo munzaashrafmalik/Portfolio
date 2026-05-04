@@ -1297,6 +1297,11 @@ button {
 }
 
 @media (max-width: 900px) {
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* Skill Card */
 .skill-card {
   background: var(--bg-secondary);

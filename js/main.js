@@ -323,4 +323,14 @@ window.addEventListener('scroll', toggleHeaderShadow);
 document.addEventListener('DOMContentLoaded', () => {
   highlightNavLink();
   toggleHeaderShadow();
+
+  // Debug: Show screen width
+  const screenWidthEl = document.getElementById('screen-width');
+  if (screenWidthEl) {
+    function updateScreenWidth() {
+      screenWidthEl.textContent = window.innerWidth;
+    }
+    updateScreenWidth();
+    window.addEventListener('resize', updateScreenWidth);
+  }
 });

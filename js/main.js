@@ -12,8 +12,6 @@ const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const themeToggle = document.querySelector('.theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
-const viewToggle = document.querySelector('.view-toggle');
-const viewIcon = document.querySelector('.view-icon');
 const contactForm = document.querySelector('.contact-form');
 const navLinksItems = document.querySelectorAll('.nav-links a');
 
@@ -82,57 +80,6 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 themeToggle?.addEventListener('click', toggleTheme);
-
-// ==================================
-// View Mode Toggle (Mobile/Desktop)
-// ==================================
-const VIEW_KEY = 'portfolio-view';
-const MOBILE_VIEW = 'mobile';
-const DESKTOP_VIEW = 'desktop';
-
-function getPreferredView() {
-  const savedView = localStorage.getItem(VIEW_KEY);
-  if (savedView) {
-    return savedView;
-  }
-  // Default to auto (responsive based on screen size)
-  return null;
-}
-
-function setView(view) {
-  if (view === null) {
-    document.documentElement.removeAttribute('data-view');
-    viewIcon.className = 'fas fa-desktop view-icon';
-    localStorage.removeItem(VIEW_KEY);
-  } else {
-    document.documentElement.setAttribute('data-view', view);
-    viewIcon.className = view === MOBILE_VIEW ? 'fas fa-desktop view-icon' : 'fas fa-mobile-alt view-icon';
-    localStorage.setItem(VIEW_KEY, view);
-  }
-}
-
-function toggleView() {
-  const currentView = document.documentElement.getAttribute('data-view');
-
-  if (currentView === null) {
-    // Auto -> Mobile
-    setView(MOBILE_VIEW);
-  } else if (currentView === MOBILE_VIEW) {
-    // Mobile -> Desktop
-    setView(DESKTOP_VIEW);
-  } else {
-    // Desktop -> Auto
-    setView(null);
-  }
-}
-
-// Initialize view on load
-const savedView = getPreferredView();
-if (savedView) {
-  setView(savedView);
-}
-
-viewToggle?.addEventListener('click', toggleView);
 
 // ==================================
 // Smooth Scroll for Anchor Links

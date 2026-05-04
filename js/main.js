@@ -12,6 +12,8 @@ const navToggle = document.querySelector('.nav-toggle');
 const navLinks = document.querySelector('.nav-links');
 const themeToggle = document.querySelector('.theme-toggle');
 const themeIcon = document.querySelector('.theme-icon');
+const viewToggle = document.querySelector('.view-toggle');
+const viewIcon = document.querySelector('.view-icon');
 const contactForm = document.querySelector('.contact-form');
 const navLinksItems = document.querySelectorAll('.nav-links a');
 
@@ -80,6 +82,52 @@ window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e)
 });
 
 themeToggle?.addEventListener('click', toggleTheme);
+
+// ==================================
+// View Mode Toggle (Mobile/Desktop)
+// ==================================
+const VIEW_KEY = 'portfolio-view';
+const MOBILE_VIEW = 'mobile';
+const DESKTOP_VIEW = 'desktop';
+
+function getPreferredView() {
+  const savedView = localStorage.getItem(VIEW_KEY);
+  return savedView || null;
+}
+
+function setView(view) {
+  if (view === null) {
+    document.documentElement.removeAttribute('data-view');
+    if (viewIcon) viewIcon.className = 'fas fa-desktop view-icon';
+    localStorage.removeItem(VIEW_KEY);
+  } else {
+    document.documentElement.setAttribute('data-view', view);
+    if (viewIcon) {
+      viewIcon.className = view === MOBILE_VIEW ? 'fas fa-desktop view-icon' : 'fas fa-mobile-alt view-icon';
+    }
+    localStorage.setItem(VIEW_KEY, view);
+  }
+}
+
+function toggleView() {
+  const currentView = document.documentElement.getAttribute('data-view');
+
+  if (currentView === null) {
+    setView(MOBILE_VIEW);
+  } else if (currentView === MOBILE_VIEW) {
+    setView(DESKTOP_VIEW);
+  } else {
+    setView(null);
+  }
+}
+
+// Initialize view on load
+const savedView = getPreferredView();
+if (savedView) {
+  setView(savedView);
+}
+
+viewToggle?.addEventListener('click', toggleView);
 
 // ==================================
 // Smooth Scroll for Anchor Links

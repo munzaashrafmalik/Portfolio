@@ -674,81 +674,6 @@ button {
   border-radius: var(--radius-full);
 }
 
-@media (max-width: 900px) {
-  .hero-container {
-    grid-template-columns: 1fr;
-    text-align: center;
-    gap: var(--space-8);
-  }
-
-  .hero-content {
-    order: 2;
-  }
-
-  .hero-image {
-    order: 1;
-  }
-
-  .hero-cta {
-    justify-content: center;
-  }
-
-  .hero-title {
-    font-size: var(--text-3xl);
-  }
-
-  .hero-image-placeholder {
-    width: 200px;
-    height: 200px;
-  }
-
-  .hero-image-wrapper {
-    width: 250px;
-    height: 250px;
-  }
-
-  .about-grid {
-    gap: var(--space-6);
-  }
-
-  .about-heading {
-    font-size: var(--text-2xl);
-  }
-
-  .about-highlights {
-    grid-template-columns: 1fr 1fr;
-  }
-
-  .about-stats {
-    grid-template-columns: 1fr;
-    gap: var(--space-4);
-  }
-
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .contact-links {
-    flex-direction: column;
-    align-items: center;
-    gap: var(--space-4);
-  }
-
-  .contact-link {
-    width: 100%;
-    max-width: 300px;
-    justify-content: center;
-  }
-}
-
 /* ==================================
    Section Titles
    ================================== */
@@ -800,18 +725,6 @@ button {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-8);
-}
-
-@media (max-width: 900px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .projects-grid {
-    grid-template-columns: 1fr;
-  }
 }
 
 /* ==================================
@@ -1064,18 +977,6 @@ button {
   gap: var(--space-8);
 }
 
-@media (max-width: 900px) {
-  .testimonials-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .testimonials-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 .testimonial-card {
   height: 100%;
   display: flex;
@@ -1191,13 +1092,6 @@ button {
   gap: var(--space-10);
   align-items: start;
   margin-bottom: var(--space-12);
-}
-
-@media (max-width: 900px) {
-  .about-grid {
-    grid-template-columns: 1fr;
-    text-align: center;
-  }
 }
 
 /* About Image */
@@ -1403,17 +1297,6 @@ button {
 }
 
 @media (max-width: 900px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
-
-@media (max-width: 600px) {
-  .skills-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
 /* Skill Card */
 .skill-card {
   background: var(--bg-secondary);

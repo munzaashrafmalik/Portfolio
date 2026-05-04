@@ -639,13 +639,6 @@ button {
   box-shadow: var(--shadow-xl);
 }
 
-@media (max-width: 900px) {
-  .hero-image-wrapper {
-    width: 200px;
-    height: 200px;
-  }
-}
-
 /* Hero Profile Image */
 .hero-profile-img {
   width: 100%;
@@ -1294,12 +1287,6 @@ button {
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
-}
-
-@media (max-width: 900px) {
-  .skills-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
 }
 
 /* Skill Card */

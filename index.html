@@ -3,26 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Munza Ashraf — Full Stack Developer</title>
-<meta name="description" content="Full Stack Developer passionate about creating web solutions that combine beautiful design with powerful functionality.">
+<title>Munza Ashraf — Agentic AI Learner & Developer</title>
+<meta name="description" content="Agentic AI learner and web developer building real projects and exploring autonomous systems. Check out my live projects and learning journey.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
 <style>
 /* ============ TOKENS ============ */
 :root{
-  --bg:#0f172a;--bg2:#1e293b;--bg3:#334155;
-  --border:#475569;--text:#f1f5f9;--muted:#94a3b8;
-  --accent:#0ea5e9;--accent-glow:rgba(14,165,233,.18);
-  --accent-soft:rgba(14,165,233,.08);--green:#10b981;
-  --card:#1e293b;--nav-bg:rgba(15,23,42,.92);
-  --radius:12px;--radius-sm:6px;
+  /* Unique color palette - Agentic AI theme */
+  --bg:#0a0e27;--bg2:#161b33;--bg3:#1e2541;
+  --border:#2d3654;--text:#e8eaf6;--muted:#9ca3c4;
+  --accent:#7c3aed;--accent-secondary:#06b6d4;
+  --accent-glow:rgba(124,58,237,.2);
+  --accent-soft:rgba(124,58,237,.1);--green:#10b981;
+  --card:#161b33;--nav-bg:rgba(10,14,39,.95);
+  --radius:10px;--radius-sm:6px;
+  /* Gradient accents for subtle touches only */
+  --gradient-accent:linear-gradient(135deg,#7c3aed,#06b6d4);
+  --gradient-text:linear-gradient(135deg,#a78bfa,#22d3ee);
 }
 [data-theme="light"]{
-  --bg:#f8fafc;--bg2:#f1f5f9;--bg3:#e2e8f0;
-  --border:#cbd5e1;--text:#0f172a;--muted:#64748b;
-  --accent:#0284c7;--accent-glow:rgba(2,132,199,.12);
-  --accent-soft:rgba(2,132,199,.06);--green:#10b981;
-  --card:#ffffff;--nav-bg:rgba(248,250,252,.92);
+  --bg:#fafbff;--bg2:#f3f4f9;--bg3:#e5e7f0;
+  --border:#c7cce0;--text:#1a1d35;--muted:#5a6288;
+  --accent:#6d28d9;--accent-secondary:#0891b2;
+  --accent-glow:rgba(109,40,217,.15);
+  --accent-soft:rgba(109,40,217,.08);--green:#10b981;
+  --card:#ffffff;--nav-bg:rgba(250,251,255,.95);
+  --gradient-accent:linear-gradient(135deg,#6d28d9,#0891b2);
+  --gradient-text:linear-gradient(135deg,#7c3aed,#0ea5e9);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
@@ -686,9 +694,40 @@ footer{padding:28px 0}
   .hero .container{gap:30px}
   .hero-profile-img{max-width:200px;}
   .hero-eyebrow{font-size:.68rem;}
-  .hero-sub{font-size:.95rem;}
-  section{padding:56px 0}
+  .hero-sub{font-size:1rem;line-height:1.7;}
+  section{padding:64px 0}
   .container{padding:0 20px}
+  .skills-grid{grid-template-columns:1fr}
+  .project-item{padding:22px 18px}
+  .hero-ctas{flex-direction:column;width:100%;}
+  .hero-ctas a{width:100%;}
+  /* Better tap targets - minimum 44x44px */
+  .btn-primary,.btn-secondary{justify-content:center;width:100%;padding:16px 28px;font-size:.95rem;}
+  .about-highlights{grid-template-columns:1fr!important;}
+  .proj-card-header{padding:24px 20px 18px;}
+  .proj-card-body{padding:20px;}
+  .proj-card-footer{padding:14px 20px;}
+  .proj-btn-demo,.proj-btn-gh{padding:12px 16px;font-size:.85rem;min-height:44px;}
+  .skill-card{padding:24px;}
+  .testi-card{padding:24px;}
+  .contact-form{padding:0;}
+  /* Better tap targets for social links */
+  .social-link{font-size:.85rem;padding:14px 18px;min-height:48px;}
+  footer .footer-inner{flex-direction:column;align-items:flex-start;gap:16px;}
+  .stat-item{width:100%;}
+  .stat-num{font-size:1.75rem;}
+  .stat-label{font-size:.75rem;}
+  /* Better form inputs */
+  .form-group input,.form-group textarea{padding:15px 18px;font-size:.95rem;}
+  .btn-send{padding:16px 32px;width:100%;justify-content:center;font-size:.95rem;min-height:48px;}
+  /* Better navigation */
+  .btn-theme{padding:10px 16px;font-size:.8rem;min-height:40px;}
+  .hamburger{padding:10px;min-width:44px;min-height:44px;}
+  .mobile-menu a{padding:16px 0;font-size:1rem;min-height:48px;}
+  /* Better project cards on mobile */
+  .proj-icon-link{width:40px;height:40px;}
+  .proj-emoji{font-size:2.2rem;}
+}
   .skills-grid{grid-template-columns:1fr}
   .project-item{padding:22px 18px}
   .hero-ctas{flex-direction:column;width:100%;}
@@ -732,13 +771,13 @@ footer{padding:28px 0}
   <div class="nav-inner">
     <a href="#home" class="nav-logo">
       <span class="name">Munza Ashraf</span>
-      <span class="role">Full Stack Developer</span>
+      <span class="role">Agentic AI Learner</span>
     </a>
     <ul class="nav-links">
       <li><a href="#projects">Projects</a></li>
       <li><a href="#skills">Skills</a></li>
       <li><a href="#about">About</a></li>
-      <li><a href="#testimonials">Testimonials</a></li>
+      <li><a href="#learning">Learning</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
     <div class="nav-right">
@@ -758,7 +797,7 @@ footer{padding:28px 0}
   <a href="#projects" onclick="closeMenu()">Projects</a>
   <a href="#skills" onclick="closeMenu()">Skills</a>
   <a href="#about" onclick="closeMenu()">About</a>
-  <a href="#testimonials" onclick="closeMenu()">Testimonials</a>
+  <a href="#learning" onclick="closeMenu()">Learning</a>
   <a href="#contact" onclick="closeMenu()">Contact</a>
 </div>
 
@@ -774,7 +813,7 @@ footer{padding:28px 0}
         <span class="typed-wrap"><span id="typed-text"></span><span class="typed-cursor">|</span></span>
       </h1>
       <p class="hero-sub">
-        Passionate about creating web solutions that combine beautiful design with powerful functionality. I build responsive, user-friendly applications that solve real-world problems.
+        Agentic AI learner and developer exploring the intersection of AI and web development. Building real projects, solving real problems, and learning every day.
       </p>
       <div class="hero-ctas">
         <a href="#projects" class="btn-primary magnetic">
@@ -788,16 +827,16 @@ footer{padding:28px 0}
       </div>
       <div class="hero-stats">
         <div class="stat-item">
-          <div class="stat-num" data-count="4">0</div>
-          <div class="stat-label mono">Projects Done</div>
+          <div class="stat-num">4+</div>
+          <div class="stat-label mono">Live Projects</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num" data-count="3">0</div>
-          <div class="stat-label mono">Happy Clients</div>
+          <div class="stat-num">2026</div>
+          <div class="stat-label mono">Started Journey</div>
         </div>
         <div class="stat-item">
-          <div class="stat-num">100%</div>
-          <div class="stat-label mono">Dedication</div>
+          <div class="stat-num">Daily</div>
+          <div class="stat-label mono">Learning & Building</div>
         </div>
       </div>
     </div>
@@ -833,12 +872,12 @@ footer{padding:28px 0}
         <div class="proj-card-body">
           <p class="proj-card-num mono">Project 01</p>
           <h3 class="proj-card-title">Weather App</h3>
-          <p class="proj-card-desc">A beautiful weather application showing real-time weather data for any city. Features 5-day forecast, temperature animations, and location-based weather.</p>
+          <p class="proj-card-desc">Built my first API-integrated web app to practice working with external data. Fetches real-time weather using OpenWeatherMap API and displays it in a clean interface. Learned how to handle async JavaScript, parse JSON responses, and manage API keys securely.</p>
           <div class="proj-card-tags">
             <span class="proj-card-tag">HTML</span>
             <span class="proj-card-tag">CSS</span>
             <span class="proj-card-tag">JavaScript</span>
-            <span class="proj-card-tag">API</span>
+            <span class="proj-card-tag">API Integration</span>
           </div>
         </div>
         <div class="proj-card-footer">
@@ -869,13 +908,14 @@ footer{padding:28px 0}
         <div class="proj-card-body">
           <p class="proj-card-num mono">Project 02</p>
           <h3 class="proj-card-title">AI Task Manager</h3>
-          <p class="proj-card-desc">An intelligent task management app powered by AI. Organize, prioritize, and complete your tasks smarter with AI-powered suggestions and automation.</p>
+          <p class="proj-card-desc">My first React project exploring how AI can enhance productivity tools. Users can add, organize, and manage tasks with a clean UI. This taught me component-based architecture, state management with hooks, and how to structure a React application from scratch.</p>
           <div class="proj-card-tags">
             <span class="proj-card-tag">React</span>
             <span class="proj-card-tag">JavaScript</span>
-            <span class="proj-card-tag">AI</span>
-            <span class="proj-card-tag">Vercel</span>
+            <span class="proj-card-tag">LocalStorage</span>
+            <span class="proj-card-tag">Hooks</span>
           </div>
+        </div>
         </div>
         <div class="proj-card-footer">
           <a href="https://munzaashrafmalik.github.io/AI_Task_Manager-app/" target="_blank" class="proj-btn-demo">
@@ -905,12 +945,12 @@ footer{padding:28px 0}
         <div class="proj-card-body">
           <p class="proj-card-num mono">Project 03</p>
           <h3 class="proj-card-title">Sync Wars</h3>
-          <p class="proj-card-desc">An interactive gaming experience with smooth animations and engaging gameplay. Built with modern web technologies for optimal performance and user experience.</p>
+          <p class="proj-card-desc">An interactive browser game I built to practice event handling and game logic. Players navigate challenges with smooth animations and responsive controls. This project taught me about the game loop, collision detection, and optimizing JavaScript for real-time interactions.</p>
           <div class="proj-card-tags">
-            <span class="proj-card-tag">HTML</span>
-            <span class="proj-card-tag">CSS</span>
+            <span class="proj-card-tag">HTML5 Canvas</span>
+            <span class="proj-card-tag">CSS3</span>
             <span class="proj-card-tag">JavaScript</span>
-            <span class="proj-card-tag">Game</span>
+            <span class="proj-card-tag">Game Logic</span>
           </div>
         </div>
         <div class="proj-card-footer">
@@ -941,12 +981,12 @@ footer{padding:28px 0}
         <div class="proj-card-body">
           <p class="proj-card-num mono">Project 04</p>
           <h3 class="proj-card-title">Stonebloom</h3>
-          <p class="proj-card-desc">A beautiful and elegant web experience showcasing modern design principles. Features smooth interactions, responsive layouts, and stunning visual aesthetics.</p>
+          <p class="proj-card-desc">A modern e-commerce landing page focused on visual storytelling and user experience. Implemented smooth scroll effects, product showcases, and responsive design. This was my deep dive into CSS Grid, Flexbox layouts, and creating compelling product presentations on the web.</p>
           <div class="proj-card-tags">
-            <span class="proj-card-tag">Web Design</span>
-            <span class="proj-card-tag">UI/UX</span>
-            <span class="proj-card-tag">Responsive</span>
-            <span class="proj-card-tag">Modern</span>
+            <span class="proj-card-tag">HTML5</span>
+            <span class="proj-card-tag">CSS Grid</span>
+            <span class="proj-card-tag">JavaScript</span>
+            <span class="proj-card-tag">Responsive Design</span>
           </div>
         </div>
         <div class="proj-card-footer">
@@ -1043,69 +1083,60 @@ footer{padding:28px 0}
     </div>
     <div class="about-wrap">
       <div class="about-text reveal-left">
-        <p>I'm a <strong>Full Stack Developer</strong> passionate about creating web solutions that combine beautiful design with powerful functionality.</p>
-        <p>With expertise in modern web technologies, I specialize in building <strong>responsive, user-friendly applications</strong> that solve real-world problems and deliver measurable results.</p>
-        <p>I believe the best software is both technically solid and genuinely enjoyable to use — that gap between "it works" and "it feels right" is where I focus my energy.</p>
-        <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:16px">Let's Work Together →</a>
+        <p>I'm <strong>Munza Ashraf</strong>, a developer passionate about the intersection of AI and web development. Currently learning how Agentic AI systems work and building projects that help me understand autonomous agents better.</p>
+        <p>Started my journey in 2026, focusing on <strong>real projects over tutorials</strong>. Every app I build teaches me something new — from API integration to state management to creating interfaces people actually want to use.</p>
+        <p>I believe in learning by doing. Each project is a step forward, each bug is a lesson, and each deployment is proof that I'm making progress. My GitHub is my portfolio — all code is public, all projects are live.</p>
+        <a href="#contact" class="btn-primary" style="display:inline-flex;margin-top:16px">Let's Connect →</a>
       </div>
       <div class="about-image-wrapper reveal-scale">
-        <img src="https://github.com/munzaashrafmalik.png" alt="Munza Ashraf - Full Stack Developer" class="about-profile-img">
+        <img src="https://github.com/munzaashrafmalik.png" alt="Munza Ashraf - Agentic AI Learner" class="about-profile-img">
       </div>
     </div>
     <div class="about-highlights stagger" style="margin-top:40px;grid-column:1/-1;display:grid;grid-template-columns:repeat(2,1fr);gap:14px">
       <div class="hl-item">
-          <span class="hl-icon">🧩</span>
-          <div><h4>Problem Solver</h4><p>I break down complex challenges into clean, maintainable solutions that scale with your business.</p></div>
+          <span class="hl-icon">🤖</span>
+          <div><h4>Agentic AI Explorer</h4><p>Learning how AI agents make decisions, exploring autonomous systems, and understanding how to build intelligent applications.</p></div>
         </div>
         <div class="hl-item">
-          <span class="hl-icon">📱</span>
-          <div><h4>Mobile-First</h4><p>Every project I build works flawlessly across all screen sizes and devices, always.</p></div>
+          <span class="hl-icon">📚</span>
+          <div><h4>Active Learner</h4><p>Every day brings new concepts. From React hooks to API design to deployment pipelines — learning through real projects.</p></div>
         </div>
         <div class="hl-item">
-          <span class="hl-icon">⚡</span>
-          <div><h4>Performance Focused</h4><p>Fast-loading, optimized code that gives users a smooth experience and helps SEO rankings.</p></div>
+          <span class="hl-icon">💻</span>
+          <div><h4>Clean Code Focus</h4><p>Writing code that's not just functional but readable and maintainable. Learning best practices as I build.</p></div>
         </div>
         <div class="hl-item">
-          <span class="hl-icon">🤝</span>
-          <div><h4>Clear Communicator</h4><p>I keep you in the loop at every stage — no surprises, just steady, reliable progress.</p></div>
+          <span class="hl-icon">🚀</span>
+          <div><h4>Ship Real Projects</h4><p>All my projects are live and functional. GitHub Pages deployments, real URLs, actual code you can see and use.</p></div>
         </div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- TESTIMONIALS -->
-<section id="testimonials">
+<!-- CURRENTLY LEARNING -->
+<section id="learning">
   <div class="container">
     <div class="section-head">
-      <div class="section-tag reveal">Testimonials</div>
-      <h2 class="reveal">What People Say</h2>
-      <p class="reveal">Kind words from clients and colleagues I've had the pleasure of working with.</p>
+      <div class="section-tag reveal">Learning Journey</div>
+      <h2 class="reveal">Currently Building Experience</h2>
+      <p class="reveal">Active learner exploring Agentic AI, web development, and building projects that matter.</p>
     </div>
     <div class="testimonials-grid stagger">
       <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-body">Munza transformed our outdated website into a modern, user-friendly platform. Our bounce rate decreased by 40% and conversions increased significantly. Highly recommend!</p>
-        <div class="testi-author">
-          <div class="author-avatar">SK</div>
-          <div><div class="author-name">Sarah Khan</div><div class="author-role">CEO, TechVision Solutions</div></div>
-        </div>
+        <div class="hl-icon" style="font-size:2rem;margin-bottom:12px">🤖</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--text)">Agentic AI Development</h3>
+        <p class="testi-body" style="font-style:normal">Learning how AI agents work, exploring frameworks, and understanding how autonomous systems make decisions and solve problems.</p>
       </div>
       <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-body">Working with Munza was a game-changer for our startup. She delivered a stunning e-commerce site ahead of schedule. Her attention to detail and responsiveness is unmatched!</p>
-        <div class="testi-author">
-          <div class="author-avatar">AR</div>
-          <div><div class="author-name">Ahmed Raza</div><div class="author-role">Founder, ShopEasy</div></div>
-        </div>
+        <div class="hl-icon" style="font-size:2rem;margin-bottom:12px">💻</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--text)">Full Stack Web Development</h3>
+        <p class="testi-body" style="font-style:normal">Building responsive web applications with HTML, CSS, JavaScript, React, and Node.js. Every project teaches me something new about clean code and user experience.</p>
       </div>
       <div class="testi-card">
-        <div class="stars">★★★★★</div>
-        <p class="testi-body">Exceptional developer! Munza built our AI Task Manager with clean code and perfect UI. The app runs smoothly and our users love the intuitive design. Will definitely work together again!</p>
-        <div class="testi-author">
-          <div class="author-avatar">MF</div>
-          <div><div class="author-name">Maria Farooq</div><div class="author-role">Product Manager, InnovateTech</div></div>
-        </div>
+        <div class="hl-icon" style="font-size:2rem;margin-bottom:12px">🚀</div>
+        <h3 style="font-size:1rem;font-weight:700;margin-bottom:10px;color:var(--text)">Real-World Projects</h3>
+        <p class="testi-body" style="font-style:normal">Not just tutorials — building actual applications that solve problems. From weather apps to AI task managers, each project is live and functional.</p>
       </div>
     </div>
   </div>
@@ -1266,7 +1297,7 @@ window.addEventListener('scroll',()=>{
 },{passive:true});
 
 /* ======== TYPED TEXT ======== */
-const phrases=['Full Stack Developer','React Developer','Node.js Expert','UI/UX Enthusiast','Problem Solver'];
+const phrases=['Agentic AI Learner','Full Stack Developer','Building Real Solutions','Exploring AI Agents','Learning Every Day'];
 let pi=0,ci=0,deleting=false,typedEl=document.getElementById('typed-text');
 function type(){
   const phrase=phrases[pi];
@@ -1282,27 +1313,6 @@ function type(){
   setTimeout(type,deleting?45:75);
 }
 setTimeout(type,1200);
-
-/* ======== COUNTER ANIMATION ======== */
-function animateCounter(el){
-  const target=parseInt(el.dataset.count);
-  let current=0;
-  const step=Math.ceil(target/30);
-  const timer=setInterval(()=>{
-    current=Math.min(current+step,target);
-    el.textContent=current+'+';
-    if(current>=target)clearInterval(timer);
-  },40);
-}
-const counterObs=new IntersectionObserver(entries=>{
-  entries.forEach(e=>{
-    if(e.isIntersecting&&e.target.dataset.count){
-      animateCounter(e.target);
-      counterObs.unobserve(e.target);
-    }
-  });
-},{threshold:.5});
-document.querySelectorAll('[data-count]').forEach(el=>counterObs.observe(el));
 
 /* ======== SCROLL REVEAL ======== */
 const revObs=new IntersectionObserver(entries=>{

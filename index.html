@@ -55,22 +55,22 @@ ul{list-style:none}
   background:var(--accent);border-radius:50%;
   pointer-events:none;z-index:9999;
   transform:translate(-50%,-50%);
-  transition:width .2s,height .2s,background .2s;
-  mix-blend-mode:difference;
+  transition:width .2s,height .2s,background .2s,opacity .3s;
+  mix-blend-mode:difference;opacity:0;
 }
 #cursor-ring{
   position:fixed;width:36px;height:36px;
   border:1.5px solid var(--accent);border-radius:50%;
   pointer-events:none;z-index:9998;
   transform:translate(-50%,-50%);
-  transition:transform .12s ease-out,width .2s,height .2s,opacity .2s;
-  opacity:.5;
+  transition:transform .12s ease-out,width .2s,height .2s,opacity .3s;
+  opacity:0;
 }
 body:has(a:hover) #cursor,
 body:has(button:hover) #cursor{width:22px;height:22px;background:var(--accent-glow)}
 body:has(a:hover) #cursor-ring,
 body:has(button:hover) #cursor-ring{width:60px;height:60px;opacity:.25}
-@media(pointer:coarse){#cursor,#cursor-ring{display:none}}
+/* cursor visible on all devices */
 
 /* ===== PARTICLE CANVAS ===== */
 #particle-canvas{
@@ -1754,7 +1754,6 @@ footer{padding:36px 0}
   <div class="container">
     <div class="footer-inner">
       <span>© 2026 <a href="#home">Munza Ashraf</a> — Agentic AI Developer</span>
-      <span class="mono" style="font-size:.6rem;color:var(--accent);opacity:.7">v3.0 • 3D</span>
       <button class="back-top-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">▲ Back to top</button>
     </div>
   </div>
@@ -1773,6 +1772,16 @@ let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{
   mx=e.clientX;my=e.clientY;
   cur.style.left=mx+'px';cur.style.top=my+'px';
+  cur.style.opacity='1';ring.style.opacity='.5';
+});
+document.addEventListener('touchmove',e=>{
+  const t=e.touches[0];
+  mx=t.clientX;my=t.clientY;
+  cur.style.left=mx+'px';cur.style.top=my+'px';
+  cur.style.opacity='1';ring.style.opacity='.5';
+},{passive:true});
+document.addEventListener('touchend',()=>{
+  cur.style.opacity='0';ring.style.opacity='0';
 });
 (function animRing(){
   rx+=(mx-rx)*.12;ry+=(my-ry)*.12;

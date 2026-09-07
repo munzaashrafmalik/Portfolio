@@ -9,39 +9,45 @@
 <title>Munza Ashraf — Agentic AI Learner & Developer</title>
 <meta name="description" content="Agentic AI learner and web developer building real projects and exploring autonomous systems. Check out my live projects and learning journey.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
 /* ============ TOKENS ============ */
 :root{
-  /* Unique color palette - Agentic AI theme */
-  --bg:#0a0e27;--bg2:#161b33;--bg3:#1e2541;
-  --border:#2d3654;--text:#e8eaf6;--muted:#9ca3c4;
-  --accent:#7c3aed;--accent-secondary:#06b6d4;
-  --accent-glow:rgba(124,58,237,.2);
-  --accent-soft:rgba(124,58,237,.1);--green:#10b981;
-  --card:#161b33;--nav-bg:rgba(10,14,39,.95);
-  --radius:10px;--radius-sm:6px;
-  /* Gradient accents for subtle touches only */
-  --gradient-accent:linear-gradient(135deg,#7c3aed,#06b6d4);
+  /* Premium dark palette - deep navy with rich purple/cyan accents */
+  --bg:#080b1a;--bg2:#10152b;--bg3:#181f3a;
+  --border:#252d4a;--text:#eef0ff;--muted:#8b93b8;
+  --accent:#8b5cf6;--accent-secondary:#06b6d4;
+  --accent-glow:rgba(139,92,246,.22);
+  --accent-soft:rgba(139,92,246,.1);--green:#10b981;
+  --card:rgba(16,21,43,.85);--nav-bg:rgba(8,11,26,.92);
+  --radius:12px;--radius-sm:8px;
+  --gradient-accent:linear-gradient(135deg,#8b5cf6,#06b6d4);
   --gradient-text:linear-gradient(135deg,#a78bfa,#22d3ee);
 }
 [data-theme="light"]{
-  --bg:#fafbff;--bg2:#f3f4f9;--bg3:#e5e7f0;
-  --border:#c7cce0;--text:#1a1d35;--muted:#5a6288;
-  --accent:#6d28d9;--accent-secondary:#0891b2;
-  --accent-glow:rgba(109,40,217,.15);
-  --accent-soft:rgba(109,40,217,.08);--green:#10b981;
-  --card:#ffffff;--nav-bg:rgba(250,251,255,.95);
-  --gradient-accent:linear-gradient(135deg,#6d28d9,#0891b2);
+  --bg:#f8f9ff;--bg2:#f0f1fa;--bg3:#e4e6f4;
+  --border:#c4c9e2;--text:#12152e;--muted:#555c82;
+  --accent:#7c3aed;--accent-secondary:#0891b2;
+  --accent-glow:rgba(124,58,237,.15);
+  --accent-soft:rgba(124,58,237,.08);--green:#10b981;
+  --card:rgba(255,255,255,.9);--nav-bg:rgba(248,249,255,.92);
+  --gradient-accent:linear-gradient(135deg,#7c3aed,#0891b2);
   --gradient-text:linear-gradient(135deg,#7c3aed,#0ea5e9);
 }
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
 body{
-  font-family:'Inter',system-ui,sans-serif;
+  font-family:'Space Grotesk','Inter',system-ui,sans-serif;
   background:var(--bg);color:var(--text);
   line-height:1.65;overflow-x:hidden;
   transition:background .3s,color .3s;
+  -webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;
+  background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(139,92,246,.08),transparent),
+                   radial-gradient(ellipse 60% 40% at 80% 60%,rgba(6,182,212,.04),transparent);
+}
+[data-theme="light"] body{
+  background-image:radial-gradient(ellipse 80% 50% at 50% -20%,rgba(124,58,237,.05),transparent),
+                   radial-gradient(ellipse 60% 40% at 80% 60%,rgba(8,145,178,.03),transparent);
 }
 a{color:inherit;text-decoration:none}
 button{cursor:pointer;border:none;background:none;font-family:inherit}
@@ -731,6 +737,219 @@ footer{padding:28px 0}
   .proj-icon-link{width:40px;height:40px;}
   .proj-emoji{font-size:2.2rem;}
 }
+
+/* ===== PREMIUM ENHANCEMENTS ===== */
+
+/* Grain texture overlay */
+body::after{
+  content:'';position:fixed;inset:0;z-index:9998;pointer-events:none;
+  opacity:.03;
+  background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-repeat:repeat;background-size:128px;
+  mix-blend-mode:overlay;
+}
+[data-theme="light"] body::after{opacity:.02}
+
+/* Premium nav scroll state */
+nav.scrolled{
+  border-bottom:1px solid transparent;
+  background:linear-gradient(var(--nav-bg),var(--nav-bg)) padding-box,
+             linear-gradient(90deg,transparent,var(--accent),var(--accent-secondary),transparent) border-box;
+  border-bottom:2px solid transparent;
+  box-shadow:0 4px 40px rgba(124,58,237,.08),0 1px 20px rgba(6,182,212,.05);
+}
+
+/* Premium project cards - glassmorphism + gradient border */
+.proj-card{
+  background:linear-gradient(135deg,rgba(22,27,51,.9),rgba(30,37,65,.7));
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  border:1px solid rgba(45,54,84,.5);
+  box-shadow:0 4px 20px rgba(0,0,0,.15),inset 0 1px 0 rgba(255,255,255,.03);
+}
+[data-theme="light"] .proj-card{
+  background:linear-gradient(135deg,rgba(255,255,255,.95),rgba(243,244,249,.8));
+  box-shadow:0 4px 20px rgba(0,0,0,.06),inset 0 1px 0 rgba(255,255,255,.8);
+}
+.proj-card::before{
+  content:'';position:absolute;inset:-1px;border-radius:var(--radius);
+  background:linear-gradient(135deg,transparent 30%,var(--accent) 50%,var(--accent-secondary) 70%,transparent 90%);
+  opacity:0;transition:opacity .4s;z-index:-1;
+  mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
+  mask-composite:exclude;-webkit-mask-composite:xor;padding:1px;
+}
+.proj-card:hover::before{opacity:1}
+.proj-card:hover{
+  box-shadow:0 25px 60px rgba(124,58,237,.12),0 10px 30px rgba(6,182,212,.08),inset 0 1px 0 rgba(255,255,255,.05);
+}
+
+/* Premium card header shimmer */
+.proj-card-header::after{
+  content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;
+  background:linear-gradient(90deg,transparent,rgba(255,255,255,.04),transparent);
+  transition:left .6s ease;
+}
+.proj-card:hover .proj-card-header::after{left:120%}
+
+/* Premium skill cards */
+.skill-card{
+  background:linear-gradient(135deg,rgba(22,27,51,.8),rgba(30,37,65,.6));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 4px 16px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.03);
+}
+[data-theme="light"] .skill-card{
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(243,244,249,.7));
+  box-shadow:0 4px 16px rgba(0,0,0,.05),inset 0 1px 0 rgba(255,255,255,.6);
+}
+.skill-card:hover{
+  box-shadow:0 20px 50px rgba(124,58,237,.1),0 8px 24px rgba(6,182,212,.06);
+}
+
+/* Premium stat numbers with gradient */
+.stat-num{
+  background:linear-gradient(135deg,var(--text) 30%,var(--accent));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+
+/* Premium section dividers */
+section{
+  border-bottom:none;position:relative;
+}
+section::after{
+  content:'';position:absolute;bottom:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--border) 20%,var(--accent) 50%,var(--border) 80%,transparent);
+  opacity:.5;
+}
+
+/* Premium hero border */
+.hero{
+  border-bottom:none;
+}
+.hero::after{
+  content:'';position:absolute;bottom:0;left:5%;right:5%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--accent-secondary) 70%,transparent);
+  opacity:.4;
+}
+
+/* Premium buttons - enhanced glow */
+.btn-primary{
+  background:linear-gradient(135deg,var(--accent),#6d28d9);
+  box-shadow:0 4px 20px var(--accent-glow),0 0 0 0 var(--accent-glow);
+}
+.btn-primary:hover{
+  box-shadow:0 10px 40px var(--accent-glow),0 0 60px rgba(124,58,237,.15);
+}
+.proj-btn-demo{
+  background:linear-gradient(135deg,var(--accent),#6d28d9);
+  box-shadow:0 3px 12px var(--accent-glow);
+}
+.proj-btn-demo:hover{
+  box-shadow:0 8px 30px var(--accent-glow),0 0 40px rgba(124,58,237,.1);
+}
+
+/* Premium testimonial/learning cards */
+.testi-card{
+  background:linear-gradient(135deg,rgba(22,27,51,.8),rgba(30,37,65,.6));
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  box-shadow:0 4px 16px rgba(0,0,0,.1),inset 0 1px 0 rgba(255,255,255,.03);
+}
+[data-theme="light"] .testi-card{
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(243,244,249,.7));
+  box-shadow:0 4px 16px rgba(0,0,0,.05);
+}
+
+/* Premium social links */
+.social-link{
+  background:linear-gradient(135deg,rgba(22,27,51,.6),rgba(30,37,65,.4));
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+[data-theme="light"] .social-link{
+  background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(243,244,249,.6));
+}
+
+/* Premium form inputs */
+.form-group input,
+.form-group textarea{
+  background:linear-gradient(135deg,rgba(22,27,51,.6),rgba(30,37,65,.4));
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.03);
+}
+[data-theme="light"] .form-group input,
+[data-theme="light"] .form-group textarea{
+  background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(243,244,249,.6));
+  box-shadow:inset 0 1px 0 rgba(255,255,255,.5);
+}
+.form-group input:focus,
+.form-group textarea:focus{
+  box-shadow:0 0 0 3px var(--accent-soft),0 0 20px rgba(124,58,237,.08);
+}
+
+/* Premium highlight items */
+.hl-item{
+  background:linear-gradient(135deg,rgba(22,27,51,.6),rgba(30,37,65,.4));
+  backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);
+}
+[data-theme="light"] .hl-item{
+  background:linear-gradient(135deg,rgba(255,255,255,.8),rgba(243,244,249,.6));
+}
+
+/* Premium footer */
+footer{
+  position:relative;
+}
+footer::before{
+  content:'';position:absolute;top:0;left:10%;right:10%;height:1px;
+  background:linear-gradient(90deg,transparent,var(--accent) 30%,var(--accent-secondary) 70%,transparent);
+  opacity:.3;
+}
+
+/* Premium progress bar glow */
+#progress-bar{
+  box-shadow:0 0 12px var(--accent-glow),0 0 4px var(--accent);
+}
+
+/* Premium GitHub profile card */
+.proj-card-github{
+  background:linear-gradient(135deg,rgba(22,27,51,.8),rgba(30,37,65,.6));
+  backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);
+  box-shadow:0 4px 20px rgba(0,0,0,.12),inset 0 1px 0 rgba(255,255,255,.03);
+}
+[data-theme="light"] .proj-card-github{
+  background:linear-gradient(135deg,rgba(255,255,255,.9),rgba(243,244,249,.7));
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+}
+
+/* Premium card tags on hover */
+.proj-card:hover .proj-card-tag{
+  background:rgba(124,58,237,.08);
+  border-color:rgba(124,58,237,.3);
+}
+
+/* Premium about image */
+.about-profile-img{
+  box-shadow:0 20px 60px rgba(124,58,237,.12),0 10px 30px rgba(6,182,212,.08);
+}
+.about-profile-img:hover{
+  box-shadow:0 30px 80px rgba(124,58,237,.2),0 15px 40px rgba(6,182,212,.12);
+}
+
+/* Premium loader */
+.loader-name{
+  background:linear-gradient(135deg,var(--accent),var(--accent-secondary));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;
+}
+.loader-bar{
+  background:linear-gradient(90deg,var(--border),rgba(124,58,237,.2));
+}
+
+/* Smooth scroll snap feel */
+html{scroll-padding-top:80px}
+
+/* Premium selection color */
+::selection{
+  background:rgba(124,58,237,.3);color:var(--text);
+}
+
 </style>
 </head>
 <body>
@@ -812,7 +1031,7 @@ footer{padding:28px 0}
       </div>
       <div class="hero-stats">
         <div class="stat-item">
-          <div class="stat-num">15+</div>
+          <div class="stat-num">14+</div>
           <div class="stat-label mono">Live Projects</div>
         </div>
         <div class="stat-item">
@@ -1233,35 +1452,6 @@ footer{padding:28px 0}
           <a href="https://github.com/munzaashrafmalik/bmi-calculator" target="_blank" class="proj-btn-gh">
             <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
             Code
-          </a>
-        </div>
-      </div>
-
-      <!-- Card 12: Premium Calculator -->
-      <div class="proj-card">
-        <div class="proj-card-header">
-          <span class="proj-emoji">🧮</span>
-          <div class="proj-header-links">
-            <a href="https://github.com/munzaashrafmalik/calculator" target="_blank" class="proj-icon-link" title="GitHub">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            </a>
-          </div>
-        </div>
-        <div class="proj-card-body">
-          <p class="proj-card-num mono">Project 12 • Beginner</p>
-          <h3 class="proj-card-title">Premium Calculator</h3>
-          <p class="proj-card-desc"><strong>What I built:</strong> A sleek calculator with a dark gradient glass-morphism design, smooth button animations, and full arithmetic operations in a single HTML file.<br><br><strong>Key learning:</strong> Inline CSS styling, glass-morphism design patterns, gradient backgrounds, JavaScript evaluation logic for calculations, and building complete apps in a single file.</p>
-          <div class="proj-card-tags">
-            <span class="proj-card-tag">HTML5</span>
-            <span class="proj-card-tag">CSS3</span>
-            <span class="proj-card-tag">JavaScript</span>
-            <span class="proj-card-tag">Glass-morphism</span>
-          </div>
-        </div>
-        <div class="proj-card-footer">
-          <a href="https://github.com/munzaashrafmalik/calculator" target="_blank" class="proj-btn-gh" style="flex:1">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg>
-            View Code
           </a>
         </div>
       </div>

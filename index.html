@@ -698,44 +698,8 @@ footer{padding:28px 0}
 @media(max-width:640px){
   .nav-links{display:none}
   .hamburger{display:flex}
-  .hero h1{font-size:2.2rem;line-height:1.15;}
-  .hero-stats{gap:28px;flex-direction:row;align-items:center;}
-  .hero-stats .stat-item{width:auto;}
-  .hero .container{gap:30px}
-  .hero-profile-img{max-width:200px;}
-  .hero-eyebrow{font-size:.68rem;}
-  .hero-sub{font-size:1rem;line-height:1.7;}
-  section{padding:64px 0}
-  .container{padding:0 20px}
-  .skills-grid{grid-template-columns:1fr}
-  .project-item{padding:22px 18px}
-  .hero-ctas{flex-direction:column;width:100%;}
-  .hero-ctas a{width:100%;}
-  /* Better tap targets - minimum 44x44px */
-  .btn-primary,.btn-secondary{justify-content:center;width:100%;padding:16px 28px;font-size:.95rem;}
-  .about-highlights{grid-template-columns:1fr!important;}
-  .proj-card-header{padding:24px 20px 18px;}
-  .proj-card-body{padding:20px;}
-  .proj-card-footer{padding:14px 20px;}
-  .proj-btn-demo,.proj-btn-gh{padding:12px 16px;font-size:.85rem;min-height:44px;}
-  .skill-card{padding:24px;}
-  .testi-card{padding:24px;}
-  .contact-form{padding:0;}
-  /* Better tap targets for social links */
-  .social-link{font-size:.85rem;padding:14px 18px;min-height:48px;}
-  footer .footer-inner{flex-direction:column;align-items:flex-start;gap:16px;}
-  .stat-num{font-size:1.75rem;}
-  .stat-label{font-size:.75rem;}
-  /* Better form inputs */
-  .form-group input,.form-group textarea{padding:15px 18px;font-size:.95rem;}
-  .btn-send{padding:16px 32px;width:100%;justify-content:center;font-size:.95rem;min-height:48px;}
-  /* Better navigation */
-  .btn-theme{padding:10px 16px;font-size:.8rem;min-height:40px;}
-  .hamburger{padding:10px;min-width:44px;min-height:44px;}
-  .mobile-menu a{padding:16px 0;font-size:1rem;min-height:48px;}
-  /* Better project cards on mobile */
-  .proj-icon-link{width:40px;height:40px;}
-  .proj-emoji{font-size:2.2rem;}
+  .about-highlights{grid-template-columns:1fr!important}
+  .mobile-menu a{padding:16px 0;font-size:1rem;min-height:48px}
 }
 
 /* ===== PREMIUM ENHANCEMENTS ===== */
@@ -1015,40 +979,46 @@ footer{padding:36px 0}
   .nav-logo .name{font-size:.95rem}
   .nav-logo .role{font-size:.52rem}
   .mobile-menu{top:56px;padding:12px 20px}
+  .btn-theme{padding:10px 14px;font-size:.75rem;min-height:40px}
+  .hamburger{padding:10px;min-width:44px;min-height:44px}
   
   /* Hero */
-  .hero h1{font-size:1.9rem;letter-spacing:-.02em}
-  .typed-wrap{font-size:clamp(1.4rem,5vw,2rem)!important}
+  .hero h1{font-size:1.9rem;line-height:1.15;letter-spacing:-.02em;word-break:break-word}
+  .typed-wrap{font-size:clamp(1.3rem,5vw,1.9rem)!important}
   .hero-sub{font-size:.92rem;line-height:1.7;text-align:center}
   .hero-eyebrow{font-size:.62rem;margin-bottom:18px}
   .hero-profile-img{max-width:180px;border-width:3px}
-  .hero-stats{gap:24px;padding-top:32px;margin-top:40px}
+  .hero-stats{gap:24px;padding-top:32px;margin-top:40px;justify-content:center;flex-wrap:wrap}
   .stat-num{font-size:1.5rem}
   .stat-label{font-size:.65rem}
+  .hero .container{gap:30px}
   
   /* Sections */
   section{padding:60px 0}
   .section-head{margin-bottom:36px}
-  .section-head h2{font-size:1.5rem}
+  .section-head h2{font-size:1.5rem;word-break:break-word}
   .section-head p{font-size:.88rem}
   .section-tag{font-size:.6rem}
   
   /* Project cards */
+  .proj-card{overflow:hidden}
   .proj-card-header{padding:20px 18px 16px}
   .proj-card-body{padding:18px;gap:12px}
   .proj-card-footer{padding:14px 18px}
   .proj-emoji{font-size:1.8rem}
-  .proj-card-title{font-size:.95rem}
+  .proj-card-title{font-size:.95rem;word-break:break-word}
   .proj-card-desc{font-size:.82rem;line-height:1.6}
   .proj-card-num{font-size:.55rem}
+  .proj-card-tags{gap:5px}
   .proj-card-tag{font-size:.52rem;padding:3px 8px}
   .proj-btn-demo,.proj-btn-gh{padding:11px 14px;font-size:.8rem;min-height:44px}
   .proj-icon-link{width:36px;height:36px}
   
   /* Skills */
-  .skill-card{padding:24px}
+  .skill-card{padding:24px;overflow:hidden}
   .skill-card h3{font-size:.72rem}
   .skill-card-desc{font-size:.78rem;margin-bottom:14px}
+  .skill-pills{gap:6px}
   .skill-pill{font-size:.68rem;padding:4px 10px;gap:4px}
   .skill-pill i{font-size:.85rem}
   .skill-icon{width:36px;height:36px;font-size:1.1rem;margin-bottom:14px}
@@ -1060,7 +1030,7 @@ footer{padding:36px 0}
   .hl-item h4{font-size:.7rem}
   .hl-item p{font-size:.78rem}
   
-  /* Expertise / Learning */
+  /* Expertise */
   .testi-card{padding:24px}
   
   /* Contact */
